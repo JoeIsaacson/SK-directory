@@ -1,1 +1,19 @@
-<p>This is the partial for view 1.</p>
+<div ng-hide="randomSelection === null">
+    <div ng-repeat="employee in employeeList" ng-show="$index === randomSelection">
+        <img src="{{ employee.image }}"></img>
+        <h3 ng-show="nameShown">{{ employee.name }}</h3>
+        <button ng-show="!nameShown" ng-click="showName()">Show Name</button>
+        <p>{{ employee.title }}</p>
+    </div>
+</div>
+
+<br>
+<br>
+
+<button ng-show="randomSelection === null" ng-click="showNext()">
+    <span>Start</span>
+</button>
+
+<button ng-show="nameShown" ng-click="showNext()">
+    <span>Next!</span>
+</button>
