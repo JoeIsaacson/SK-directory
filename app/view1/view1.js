@@ -13,6 +13,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     $scope.randomSelection = null;
     $scope.nameShown = false;
+    $scope.descriptionShown = false;
 
     $rootScope.employeeList = [
         {
@@ -177,6 +178,10 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.nameShown = true;
     };
 
+    $scope.showDescription = function() {
+        $scope.descriptionShown = true;
+    };
+
     $scope.showNext = function() {
 
         // GENERATE A NEW NUMBER
@@ -193,6 +198,7 @@ angular.module('myApp.view1', ['ngRoute'])
         }
 
         $scope.nameShown = false;
+        $scope.descriptionShown = false;
 
         // RUN DAT FUNCTION BRUV
         generateNumber();

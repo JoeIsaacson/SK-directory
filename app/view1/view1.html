@@ -1,19 +1,21 @@
-<div ng-hide="randomSelection === null">
-    <div ng-repeat="employee in employeeList" ng-show="$index === randomSelection">
-        <img src="{{ employee.image }}"></img>
-        <h3 ng-show="nameShown">{{ employee.name }}</h3>
-        <button ng-show="!nameShown" ng-click="showName()">Show Name</button>
-        <p>{{ employee.title }}</p>
+<div class="card">
+
+    <div ng-show="randomSelection === null">
+        <h1 class="app-header">Guess the SongKick Employee</h1>
+        <div class="bottom-btn btn"ng-click="showNext()">Start</div>
+    </div>
+
+    <div class="" ng-hide="randomSelection === null">
+        <div ng-repeat="employee in employeeList" ng-show="$index === randomSelection">
+            <img class="profile-img" src="{{ employee.image }}"></img>
+            <div class="profile-info">
+                <h3 class="profile-info__name" ng-show="nameShown">{{ employee.name }}</h3>
+                <button class="profile-info__button btn" ng-show="!nameShown" ng-click="showName()">Show Name and Bio</button>
+                <p class="profile-info__title">{{ employee.title }}</p>
+                <p class="profile-info__description" ng-show="nameShown">{{ employee.description }}</p>
+            </div>
+        </div>
+
+        <div class="bottom-btn btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
     </div>
 </div>
-
-<br>
-<br>
-
-<button ng-show="randomSelection === null" ng-click="showNext()">
-    <span>Start</span>
-</button>
-
-<button ng-show="nameShown" ng-click="showNext()">
-    <span>Next!</span>
-</button>
