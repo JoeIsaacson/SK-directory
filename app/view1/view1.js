@@ -14,6 +14,11 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.randomSelection = null;
     $scope.nameShown = false;
     $scope.descriptionShown = false;
+    $scope.resultsVisible = false;
+
+    var falseNames = ["Ben Hodgson", "Callum Merriman", "Dean Elbaz", "Johanna Cherry", "Dave MacLadrie", "Alex Read", "Ryan Simms", "Jamie Wright", "David Hernandez"];
+
+    console.log(falseNames[0]);
 
     $rootScope.employeeList = [
         {
@@ -182,29 +187,78 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.descriptionShown = true;
     };
 
+    $scope.hideDescription = function() {
+        $scope.descriptionShown = false;
+    };
+
+
     $scope.showNext = function() {
 
-        // GENERATE A NEW NUMBER
+        // ClEAR ANY SELECTED PEOPLE
+
+        $scope.selectedName = null;
+        $scope.resultsVisible = false;
+
+        // DEFINE FUNCTION TO GENERATE A NEW NUMBER FOR NEXT PERSON
         var generateNumber = function() {
             var newNumber = (Math.floor(Math.random() * ($rootScope.employeeList.length)));
-            console.log(newNumber);
 
+            // Check to see if new number for selected person is random
             if (newNumber === $scope.randomSelection) {
                 console.log("duplicate");
                 generateNumber();
             } else {
                 $scope.randomSelection = newNumber;
             };
-        }
+        };
+
+        // DEFINE FUNCTION TO GENERATE 2 NEW NUMBERS FOR RANDOM ASS PEOPLE
+        var generateTwoNumbers = function() {
+            // THIS FUNCTION IS INHERINTLEY FUCKED AND CAN RETURN TWO OF THE SAME #
+            $scope.newNumberOne = (Math.floor(Math.random() * (falseNames.length)));
+            $scope.newNumberTwo = (Math.floor(Math.random() * (falseNames.length - 1)));
+
+            // console.log('number one is', $scope.newNumberOne);
+            // console.log('number two is', $scope.newNumberTwo);
+        };
+
+        $scope.generateRandomOrderBy = function(){
+            $scope.randomOrderBy = Math.random();
+            console.log($scope.randomOrderBy);
+        };
+
+        $scope.generateRandomOrderBy();
+
+        // CREATE A RANDOM NUMBER FOR THE LIST ORDER
+
+        //console.log('new order sort is', $scope.newOrderSort = (Math.floor(Math.random() * 3)));
 
         $scope.nameShown = false;
         $scope.descriptionShown = false;
 
-        // RUN DAT FUNCTION BRUV
+        // RUN THE THE FUNCTION TO GENERATE A NEW SET OF NUMBERS FOR NEXT PERSON
         generateNumber();
+        generateTwoNumbers();
 
+        //SET THE EMPLOYEE NAME / TITLE
         $scope.selectedEmployeeName = $rootScope.employeeList[$scope.randomSelection].name;
         $scope.selectedEmployeeTitle = $rootScope.employeeList[$scope.randomSelection].title;
+
+        $scope.listOfPeople = [$rootScope.employeeList[$scope.randomSelection].name, falseNames[$scope.newNumberOne], falseNames[$scope.newNumberTwo]];
+    };
+
+    $scope.selectPerson = function(person) {
+
+        $scope.selectedName = person;
+        $scope.resultsVisible = true;
+        $scope.nameShown = true;
+
+        if ($scope.selectedName === $rootScope.employeeList[$scope.randomSelection].name) {
+            $scope.correctAnswer = true;
+        } else {
+            $scope.correctAnswer = false;
+        }
+
     };
 
 }]);
