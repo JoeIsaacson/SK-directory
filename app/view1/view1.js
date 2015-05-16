@@ -206,8 +206,10 @@ angular.module('myApp.view1', ['ngRoute'])
         while($scope.randomArray.length < 3){
             var randomnumber=Math.floor(Math.random()*$rootScope.employeeList.length)
             var found=false;
+            console.log($scope.randomSelection);
+
             for(var i=0;i<$scope.randomArray.length;i++){
-                if($scope.randomArray[i]==randomnumber){
+                if($scope.randomArray[i]==randomnumber && randomnumber != $scope.randomSelection){
                     found=true;break
                 }
             } if(!found)$scope.randomArray[$scope.randomArray.length]=randomnumber;
@@ -249,15 +251,11 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.resultsVisible = true;
         $scope.nameShown = true;
 
-        console.log($scope.selectedEmployee.name);
-        console.log($scope.selectedName);
-
+        // Waas the selection correct?
         if ($scope.selectedEmployee.name === $scope.selectedName) {
             $scope.correctAnswer = true;
-            console.log('match');
         } else {
             $scope.correctAnswer = false;
-            console.log('NO');
         };
 
     };

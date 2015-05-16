@@ -16,7 +16,7 @@
                 </div>
                 <!--List of possible people-->
                 <ul class="basic-list">
-                    <li class="possible-name basic-list--option" ng-class="{'selected': person === selectedName }" ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy" ng-click="selectPerson(person)">{{ person.name }}</li>
+                    <li class="possible-name basic-list--option" ng-class="{'selected': person.name === selectedName }" ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy" ng-click="selectPerson(person)">{{ person.name }}</li>
                 </ul>
                 <p class="profile-info__title">{{ employee.title }}</p>
                 <hr>
