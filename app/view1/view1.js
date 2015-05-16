@@ -18,8 +18,6 @@ angular.module('myApp.view1', ['ngRoute'])
 
     var falseNames = ["Ben Hodgson", "Callum Merriman", "Dean Elbaz", "Johanna Cherry", "Dave MacLadrie", "Alex Read", "Ryan Simms", "Jamie Wright", "David Hernandez"];
 
-    console.log(falseNames[0]);
-
     $rootScope.employeeList = [
         {
             name: "Ian Hograth",
@@ -198,66 +196,69 @@ angular.module('myApp.view1', ['ngRoute'])
 
         $scope.selectedName = null;
         $scope.resultsVisible = false;
+        $scope.nameShown = false;
+        $scope.descriptionShown = false;
+
+        // Create random list of 3, non matching numbers
+
+        $scope.randomArray = [];
+
+        while($scope.randomArray.length < 3){
+            var randomnumber=Math.floor(Math.random()*$rootScope.employeeList.length)
+            var found=false;
+            for(var i=0;i<$scope.randomArray.length;i++){
+                if($scope.randomArray[i]==randomnumber){
+                    found=true;break
+                }
+            } if(!found)$scope.randomArray[$scope.randomArray.length]=randomnumber;
+        }
 
         // DEFINE FUNCTION TO GENERATE A NEW NUMBER FOR NEXT PERSON
-        var generateNumber = function() {
-            var newNumber = (Math.floor(Math.random() * ($rootScope.employeeList.length)));
+        var selectEmployee = function() {
+            var randomSelectionNumber = (Math.ceil(Math.random()*3));
+            $scope.randomSelection = $scope.randomArray[randomSelectionNumber-1];
 
-            // Check to see if new number for selected person is random
-            if (newNumber === $scope.randomSelection) {
-                console.log("duplicate");
-                generateNumber();
-            } else {
-                $scope.randomSelection = newNumber;
-            };
+            console.log($scope.randomArray, randomSelectionNumber);
+            console.log($scope.randomSelection);
+
+            //SET THE EMPLOYEE NAME / TITLE
+            $scope.selectedEmployee = $rootScope.employeeList[$scope.randomSelection];
+            $scope.listOfPeople = [$rootScope.employeeList[$scope.randomArray[0]], $rootScope.employeeList[$scope.randomArray[1]], $rootScope.employeeList[$scope.randomArray[2]]];
+
+            console.log($scope.selectedEmployee.name);
         };
 
-        // DEFINE FUNCTION TO GENERATE 2 NEW NUMBERS FOR RANDOM ASS PEOPLE
-        var generateTwoNumbers = function() {
-            // THIS FUNCTION IS INHERINTLEY FUCKED AND CAN RETURN TWO OF THE SAME #
-            $scope.newNumberOne = (Math.floor(Math.random() * (falseNames.length)));
-            $scope.newNumberTwo = (Math.floor(Math.random() * (falseNames.length - 1)));
+        selectEmployee();
 
-            // console.log('number one is', $scope.newNumberOne);
-            // console.log('number two is', $scope.newNumberTwo);
-        };
+
+
+        // RANDOMIZE THE LIST
 
         $scope.generateRandomOrderBy = function(){
             $scope.randomOrderBy = Math.random();
-            console.log($scope.randomOrderBy);
+            //console.log($scope.randomOrderBy);
         };
 
         $scope.generateRandomOrderBy();
 
-        // CREATE A RANDOM NUMBER FOR THE LIST ORDER
-
-        //console.log('new order sort is', $scope.newOrderSort = (Math.floor(Math.random() * 3)));
-
-        $scope.nameShown = false;
-        $scope.descriptionShown = false;
-
-        // RUN THE THE FUNCTION TO GENERATE A NEW SET OF NUMBERS FOR NEXT PERSON
-        generateNumber();
-        generateTwoNumbers();
-
-        //SET THE EMPLOYEE NAME / TITLE
-        $scope.selectedEmployeeName = $rootScope.employeeList[$scope.randomSelection].name;
-        $scope.selectedEmployeeTitle = $rootScope.employeeList[$scope.randomSelection].title;
-
-        $scope.listOfPeople = [$rootScope.employeeList[$scope.randomSelection].name, falseNames[$scope.newNumberOne], falseNames[$scope.newNumberTwo]];
     };
 
     $scope.selectPerson = function(person) {
 
-        $scope.selectedName = person;
+        $scope.selectedName = person.name;
         $scope.resultsVisible = true;
         $scope.nameShown = true;
 
-        if ($scope.selectedName === $rootScope.employeeList[$scope.randomSelection].name) {
+        console.log($scope.selectedEmployee.name);
+        console.log($scope.selectedName);
+
+        if ($scope.selectedEmployee.name === $scope.selectedName) {
             $scope.correctAnswer = true;
+            console.log('match');
         } else {
             $scope.correctAnswer = false;
-        }
+            console.log('NO');
+        };
 
     };
 
