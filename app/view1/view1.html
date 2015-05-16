@@ -1,23 +1,30 @@
 <div class="card">
 
-    <div ng-show="randomSelection === null">
+    <div ng-show="count < 1">
         <h1 class="app-header">Guess the SongKick Employee</h1>
-        <div class="bottom-btn btn"ng-click="showNext()">Start</div>
+        <div class="bottom-btn btn" ng-click="showNext()">Start</div>
     </div>
 
-    <div class="" ng-hide="randomSelection === null">
-        <div ng-repeat="employee in employeeList" ng-show="$index === randomSelection">
+    <div class="" ng-show="count > 0">
+        <div ng-repeat="employee in employeeList" ng-show="$index === count-1">
             <img class="profile-img" src="{{ employee.image }}"></img>
             <div class="profile-info">
                 <!--List of possible people-->
-                <div class="results" ng-show="resultsVisible">
-                    <h1 class="success" ng-show="correctAnswer">Correct!</h1>
-                    <h1 class="failure" ng-hide="correctAnswer">NOPE</h1>
+                <div class="results">
+                    <h2 class="sub-header" ng-show="!resultsVisible">Who am I?</h2>
+                    <h2 class="sub-header success" ng-show="correctAnswer && resultsVisible">Correct!</h2>
+                    <h2 class="sub-header failure" ng-show="!correctAnswer && resultsVisible">Nah dude</h2>
                 </div>
                 <!--List of possible people-->
-                <ul class="basic-list">
-                    <li class="possible-name basic-list--option" ng-class="{'selected': person.name === selectedName }" ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy" ng-click="selectPerson(person)">{{ person.name }}</li>
-                </ul>
+                <div class="basic-list">
+                    <button
+                        class="possible-name basic-list--option btn"
+                        ng-class="{'selected': person === selectedName }"
+                        ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy"
+                        ng-click="selectPerson(person)">
+                        {{ person }}
+                    </button>
+                </div>
                 <p class="profile-info__title">{{ employee.title }}</p>
                 <hr>
                 <!--Action Buttons-->
@@ -29,4 +36,21 @@
 
         <div class="bottom-btn btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
     </div>
+
+    <div ng-show="count > employeeList.length">
+        <h1 class="app-header final-header">Finished!</h1>
+        <div class="results-info">
+            <p>You were <span ng-class="{'success': successRate >= 0.5, 'failure': successRate < 0.5,}"><b>{{ correctAnswers }} / {{ count-1 }}</b></p>
+            <hr>
+            <p ng-show="successRate === 0">That was awful.</p>
+            <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work.</p>
+            <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv.</p>
+            <p ng-show="successRate == 1">Very well done! Contact Adam Schuster for a Starbucks Gift Certificate!</p>
+            <p ng-show="successRate == 1">
+                <br>
+                <img class="success-image img--responsive" src="http://ecx.images-amazon.com/images/I/81zvZNEDh8L._SL1500_.jpg"></img>
+            </p>
+        </div>
+    </div>
+
 </div>
