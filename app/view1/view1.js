@@ -22,7 +22,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $rootScope.employeeList = [
         {
             name: "Ian Hograth",
-            description: "This employee got master’s in machine learning at Cambridge and loves dystopian robot takeover narratives. Seven years ago, Ian realized being a choirboy came with no street cred, so he started DJing hip-hop, funk, drum & bass, and grime. Ian quit his job at Bain & Company, Singapore to start Songkick.",
+            description: "This employee got a master’s in machine learning at Cambridge and loves dystopian robot takeover narratives. Seven years ago, Ian realized being a choirboy came with no street cred, so he started DJing hip-hop, funk, drum & bass, and grime. Ian quit his job at Bain & Company, Singapore to start Songkick.",
             title: "Co-founder, CEO",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/ih-790dea3.jpg"
         },

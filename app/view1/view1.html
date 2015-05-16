@@ -2,7 +2,7 @@
 
     <div ng-show="count < 1">
         <h1 class="app-header">Guess the SongKick Employee</h1>
-        <div class="bottom-btn btn" ng-click="showNext()">Start</div>
+        <div class="bottom-btn bottom-primary btn" ng-click="showNext()">Start</div>
     </div>
 
     <div class="" ng-show="count > 0">
@@ -26,15 +26,24 @@
                     </button>
                 </div>
                 <p class="profile-info__title">{{ employee.title }}</p>
-                <hr>
                 <!--Action Buttons-->
-                <p class="profile-info__description" ng-show="descriptionShown">{{ employee.description }}</p>
-                <button class="profile-info__button btn" ng-hide="descriptionShown" ng-click="showDescription()">Show Bio</button>
-                <button class="profile-info__button btn" ng-show="descriptionShown" ng-click="hideDescription()">Close</button>
+            </div>
+
+            <div class="bio-info" ng-show="descriptionShown">
+                <hr class="bio-info--header">
+                <p class="profile-info__description bio-info--paragraph">{{ employee.description }}</p>
+            </div>
+
+            <div class="bottom-btn bottom-default btn" ng-hide="descriptionShown" ng-click="showDescription()">
+                <a class="profile-info__button">Show Bio &#x27aa;</a>
+            </div>
+
+            <div class="bottom-btn bottom-default btn" ng-show="descriptionShown" ng-click="hideDescription()">
+                <a class="profile-info__button">Close</a>
             </div>
         </div>
 
-        <div class="bottom-btn btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
+        <div class="bottom-btn bottom-primary btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
     </div>
 
     <div ng-show="count > employeeList.length">

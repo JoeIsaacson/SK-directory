@@ -1,6 +1,6 @@
 body {
     background-color: #fafafa;
-    color: #3a3a3a;
+    color: #545252;
     padding: 20px;
 }
 
@@ -12,6 +12,11 @@ h5,
 p {
     padding: 0;
     margin: 0;
+}
+
+hr {
+    margin: 0;
+    border-color: #ddd;
 }
 
 .img--responsive {
@@ -59,24 +64,25 @@ p {
 .basic-list--option {
     cursor: pointer;
     background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 6px;
     margin: 5px 0;
     padding: 10px 15px;
-    -webkit-transition: background-color 0.5s ease; /* Safari */
-    transition: background-color 0.5s ease, border-color 0.5s ease;
     width: 100%;
+}
+
+.basic-list--option:hover {
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .basic-list--option.selected {
     background-color: #f80046;
-    border-color: #D60A43;
     color: #fff;
 }
 
 .basic-list--option.selected:hover {
     background-color: #D60A43;
     color: #f1f1f1;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .basic-list--option:last-of-type {
@@ -120,6 +126,14 @@ p {
     padding-top: 15px;
 }
 
+.bio-info--header {
+    margin-bottom: 20px;
+}
+
+.bio-info--paragraph {
+    padding: 0 20px 20px;
+}
+
 .btn {
     width: 100%;
     font-size: 14px;
@@ -136,7 +150,7 @@ p {
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 .btn:focus {
@@ -146,12 +160,20 @@ p {
 
 .bottom-btn  {
     padding: 15px 0;
-    color: #fff;
     font-weight: bold;
     text-align: center;
-    background-color: #f80046;
     border-radius: 0px 0px 6px 6px;
     margin: 0 -1px -1px -1px;
+}
+
+.bottom-btn.bottom-primary {
+    background-color: #f80046;
+    color: #fff;
+}
+
+.bottom-btn.bottom-default {
+    background-color: #DDD;
+    color: #555;
 }
 
 .success-image {
@@ -159,7 +181,7 @@ p {
 }
 
 .final-header {
-    padding-bottom: 0;
+    padding-bottom: 0
 }
 
 /* animation */
