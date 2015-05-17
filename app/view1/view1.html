@@ -1,65 +1,79 @@
-<div class="card">
-
-    <div ng-show="count < 1">
-        <h1 class="app-header">Guess the SongKick Employee</h1>
-        <div class="bottom-btn bottom-primary btn" ng-click="showNext()">Start</div>
+<div class="card" ng-show="count < 1">
+    <div class="profile-img-container">
+        <img class="profile-img img--responsive" src="starter-img.jpg"></img>
     </div>
+    <!-- <h1 class="app-header">Guess the SongKick Employee</h1> -->
+    <div class="bottom-btn bottom-primary btn" ng-click="showNext()">Start</div>
+</div>
 
-    <div class="" ng-show="count > 0">
-        <div ng-repeat="employee in employeeList" ng-show="$index === count-1">
-            <img class="profile-img" src="{{ employee.image }}"></img>
-            <!--List of possible people-->
-            <div class="profile-header text-center">
-                <h2 class="sub-header" ng-show="!resultsVisible">Who am I?</h2>
-                <h2 class="sub-header" ng-class="{'success': correctAnswer, 'failure': !correctAnswer}" ng-show="resultsVisible">{{ employee.name }}</h2>
-                <p class="profile-header__title text-center weak">{{ employee.title }}</p>
-            </div>
-            <!--Profile Info-->
-            <div class="profile-info">
-                <!--List of possible people-->
-                <div class="basic-list">
-                    <button
-                        class="possible-name basic-list--option btn"
-                        ng-class="{'selected': person === selectedName }"
-                        ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy"
-                        ng-click="selectPerson(person)">
-                        {{ person }}
-                    </button>
-                </div>
-                <!--Action Buttons-->
-            </div>
-
-            <div class="bio-info" ng-show="descriptionShown">
-                <hr class="bio-info--header">
-                <p class="profile-info__description bio-info--paragraph weak">{{ employee.description }}</p>
-            </div>
-
-            <div class="bottom-btn bottom-default btn" ng-hide="descriptionShown" ng-click="showDescription()">
-                <a class="profile-info__button">Show Bio &#x27aa;</a>
-            </div>
-
-            <div class="bottom-btn bottom-default btn" ng-show="descriptionShown" ng-click="hideDescription()">
-                <a class="profile-info__button">Hide Bio</a>
-            </div>
+<div ng-show="count > 0">
+    <div class="card" ng-repeat="employee in employeeList" ng-show="$index === count-1">
+        <div class="profile-img-container">
+            <img class="profile-img img--responsive" src="{{ employee.image }}"></img>
+        </div>
+        <!--Name-->
+        <div class="profile-header text-center">
+            <h2 class="sub-header" ng-show="!resultsVisible">Who am I?</h2>
+            <h2 class="sub-header" ng-class="{'success pulse': correctAnswer, 'failure shake': !correctAnswer}" ng-show="resultsVisible">{{ employee.name }}</h2>
+            <p class="profile-header__title text-center weak">{{ employee.title }}</p>
         </div>
 
+        <!--Profile Info-->
+        <div class="profile-info">
+            <!--List of possible people-->
+            <div class="basic-list">
+                <button
+                    class="possible-name basic-list--option btn"
+                    ng-class="{'selected': person === selectedName }"
+                    ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy"
+                    ng-click="selectPerson(person)">
+                    {{ person }}
+                </button>
+            </div>
+            <!--Action Buttons-->
+        </div>
+
+        <div class="bio-info" ng-show="descriptionShown">
+            <hr class="bio-info--header">
+            <p class="profile-info__description bio-info--paragraph weak">{{ employee.description }}</p>
+        </div>
+
+        <div class="bottom-btn bottom-default btn" ng-hide="descriptionShown" ng-click="showDescription()">
+            <a class="profile-info__button">Show Bio &rsaquo;</a>
+        </div>
+
+        <div class="bottom-btn bottom-default btn" ng-show="descriptionShown" ng-click="hideDescription()">
+            <a class="profile-info__button">Hide Bio</a>
+        </div>
         <div class="bottom-btn bottom-primary btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
     </div>
 
-    <div ng-show="count > employeeList.length">
-        <h1 class="app-header final-header">Finished!</h1>
-        <div class="results-info">
-            <p>You were <span ng-class="{'success': successRate >= 0.5, 'failure': successRate < 0.5,}"><b>{{ correctAnswers }} / {{ count-1 }}</b></p>
-            <hr>
-            <p ng-show="successRate === 0">That was awful.</p>
-            <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work.</p>
-            <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv.</p>
-            <p ng-show="successRate == 1">Very well done! Contact Adam Schuster for a Starbucks Gift Certificate!</p>
-            <p ng-show="successRate == 1">
-                <br>
-                <img class="success-image img--responsive" src="http://ecx.images-amazon.com/images/I/81zvZNEDh8L._SL1500_.jpg"></img>
-            </p>
-        </div>
+</div>
+
+<div class="card" ng-show="count > employeeList.length">
+    <h1 class="app-header final-header">Finished!</h1>
+    <div class="results-info">
+        <p>You were <span ng-class="{'success': successRate >= 0.5, 'failure': successRate < 0.5,}"><b>{{ correctAnswers }} / {{ count-1 }}</b></p>
+        <hr class="results-info__hr">
+        <p ng-show="successRate === 0">That was awful.</p>
+        <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work.</p>
+        <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv.</p>
+        <p ng-show="successRate == 1">Very well done! Contact Adam Schuster for a Starbucks Gift Certificate!</p>
+        <p ng-show="successRate == 1">
+            <br>
+            <img class="success-image img--responsive" src="http://ecx.images-amazon.com/images/I/81zvZNEDh8L._SL1500_.jpg"></img>
+        </p>
     </div>
 
+    <hr>
+
+    <div class="results-info" ng-show="resultsArray.length > 0">
+        <h3>You don't know the following people.</h3>
+        <ul class="block-list">
+            <li class="wrong-names block-list--item" ng-repeat="employee in employeeList" ng-hide="resultsArray[$index] == 'right'">
+                <img class="wrong-names__profile-img img--responsive" src="{{ employee.image }}"></img>
+                <p class="wrong-names__name text-center">{{ employee.name }}</p>
+            </li>
+        </ul>
+    </div>
 </div>

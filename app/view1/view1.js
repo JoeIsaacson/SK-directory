@@ -49,7 +49,8 @@ angular.module('myApp.view1', ['ngRoute'])
             description: "This employee has been designing since the early 1990’s, across mobile, iTV, and the web. He was lead designer at the BBC, helming their homepage redesign in 2000. Since then, he was at Skype in their early years and started his own T-shirt design website. He also DJs at a night called 99p Records in Shoreditch.",
             title: "Design Director",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/gb-636c84a.jpg"
-        },
+        }
+        ,
         {
             name: "Marc Pacheco",
             description: "Before joining Songkick, this employee lead the client-side development of the Guardian’s R2 project, which, over the course of 2.5 years, moved the entire website onto a more modern and robust platform. Before that, he worked on a wide variety of standards-compliant websites for the likes of Unilever, BT, Sky, and Halifax.",
@@ -191,18 +192,11 @@ angular.module('myApp.view1', ['ngRoute'])
             };
         };
 
-        console.log(setList);
-        console.log(setList.length);
-
         for (var i = 0; i < setList.length; i++) {
             while (setList[i].length < 3) {
-                console.log("add banana!");
                 var randomNumber = Math.floor(Math.random()*setList.length);
                 if (randomNumber != i && randomNumber != setList[i][1]) {
-                    console.log("not a duplicate!");
                     setList[i].push(randomNumber);
-                } else {
-                    console.log("duplicate!");
                 };
             };
         };
@@ -242,8 +236,6 @@ angular.module('myApp.view1', ['ngRoute'])
 
             $scope.listOfPeople = [$scope.employeeOne, $scope.employeeTwo, $scope.employeeThree];
 
-            console.log($scope.listOfPeople);
-
             // RANDOMIZE THE LIST
 
             $scope.generateRandomOrderBy = function(){
@@ -258,6 +250,8 @@ angular.module('myApp.view1', ['ngRoute'])
 
     };
 
+    $scope.resultsArray = [];
+
     $scope.selectPerson = function(person) {
 
         if ($scope.employeeList.length >= $scope.count) {
@@ -269,9 +263,13 @@ angular.module('myApp.view1', ['ngRoute'])
             if ($scope.employeeOne === $scope.selectedName) {
                 $scope.correctAnswer = true;
                 $scope.correctAnswers = $scope.correctAnswers +1;
+                $scope.resultsArray.push("right");
+                console.log($scope.resultsArray);
             } else {
                 $scope.correctAnswer = false;
                 $scope.incorrectAnswers = $scope.incorrectAnswers +1;
+                $scope.resultsArray.push("wrong");
+                console.log($scope.resultsArray);
             };
         };
 

@@ -1,7 +1,6 @@
 body {
     background-color: #fafafa;
     color: #545252;
-    padding: 20px;
 }
 
 h1,
@@ -46,19 +45,48 @@ hr {
 }
 
 .card {
-    position: relative;
+    position: absolute;
+    top: 0;
     border-radius: 6px;
     background-color: #f2f2f2;
     border: 1px solid #ddd;
+    margin: 20px 10px 40px;
+}
+
+.card--start {
+    border: 1px solid #B3B3B3;
+}
+
+.block-list:last-child {
+    margin: 10px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.block-list--item {
+    padding: 15px 0;
+}
+
+.block-list--item:last-of-type {
+    padding-bottom: 0;
+}
+
+.block-list--item:not(:last-of-type) {
+    border-bottom: 1px solid #ddd;
 }
 
 .app-header {
     padding: 30px 20px;
 }
 
+.profile-img-container {
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -1px;
+}
+
 .profile-img {
     border-radius: 6px 6px 0 0;
-    width: 100%;
 }
 
 .sub-header {
@@ -84,12 +112,12 @@ hr {
 }
 
 .basic-list--option.selected {
-    background-color: #f80046;
+    background-color: #777;
     color: #fff;
 }
 
 .basic-list--option.selected:hover {
-    background-color: #D60A43;
+    background-color: #666;
     color: #f1f1f1;
     /*transition: background-color 0.5s ease, border-color 0.5s ease;*/
 }
@@ -113,6 +141,43 @@ hr {
 .profile-header {
     padding-bottom: 15px;
     border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    margin-right: -1px;
+    border-top: none;
+}
+
+.card.ng-hide-add {
+    /*-webkit-animation: flipOutY 0.5s;
+    -moz-animation: flipOutY 0.5s;
+    -ms-animation: flipOutY 0.5s;
+    animation: flipOutY 0.5s;
+    -webkit-animation-delay: 0.0;
+    animation-delay: 0.0;*/
+}
+
+.card.ng-hide-remove {
+    /*-webkit-animation: flipInY 0.5s;
+    -moz-animation: flipInY 0.5s;
+    -ms-animation: flipInY 0.5s;
+    animation: flipInY 0.5s;
+    -webkit-animation-delay: 0.0;
+    animation-delay: 0;*/
+}
+
+.shake.ng-hide-remove {
+    -webkit-animation: shake 1s;
+    -moz-animation: shake 1s;
+    -ms-animation: shake 1s;
+    animation: shake 1s;
+}
+
+.pulse.ng-hide-remove {
+    -webkit-animation: pulse 0.5s;
+    -moz-animation: pulse 0.5s;
+    -ms-animation: pulse 0.5s;
+    animation: pulse 0.5s;
 }
 
 .profile-header__title {
@@ -171,7 +236,6 @@ hr {
     outline:0;
 }
 
-
 .bottom-btn  {
     padding: 15px 0;
     font-weight: bold;
@@ -196,6 +260,18 @@ hr {
 
 .final-header {
     padding-bottom: 0
+}
+
+.results-info__hr {
+    margin: 15px 0;
+}
+
+.wrong-names__profile-img {
+    border-radius: 6px;
+}
+
+.wrong-names__name {
+    padding-top: 15px;
 }
 
 /* animation */
