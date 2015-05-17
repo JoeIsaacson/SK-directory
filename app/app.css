@@ -30,6 +30,11 @@ hr {
     color: red;
 }
 
+.failure .sub-header {
+    background-color: #f80046;
+    color: #f1f1f1;
+}
+
 .weak {
     color: #777;
 }
@@ -89,37 +94,34 @@ hr {
     border-radius: 6px 6px 0 0;
 }
 
-.sub-header {
-    padding-top: 20px;
-}
-
 .basic-list {
     list-style: none;
-    padding: 20px 0;
+    margin-left: -1px;
+    margin-right: -1px;
 }
 
-.basic-list--option {
+.btn.basic-list--option {
     cursor: pointer;
     background-color: #fff;
     border-radius: 6px;
-    margin: 5px 0;
-    padding: 10px 15px;
+    margin: 0px 0;
+    padding: 20px 15px;
     width: 100%;
+    border-radius: 0;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 
-.basic-list--option:hover {
-    /*transition: background-color 0.5s ease, border-color 0.5s ease;*/
+.btn.basic-list--option:not(:last-of-type) {
+    border-bottom: 1px solid #ddd;
 }
 
-.basic-list--option.selected {
-    background-color: #777;
-    color: #fff;
+.btn.basic-list--option:hover {
+    background-color: #F6F6F6;
 }
 
-.basic-list--option.selected:hover {
-    background-color: #666;
-    color: #f1f1f1;
-    /*transition: background-color 0.5s ease, border-color 0.5s ease;*/
+.btn.basic-list--option.selected {
+    background-color: #EEEDED;
 }
 
 .basic-list--option:last-of-type {
@@ -130,16 +132,41 @@ hr {
     background-color: #ddd;
 }
 
-.profile-info{
-    padding: 0px 20px 5px;
-}
-
 .results-info {
     padding: 20px;
 }
 
+.profile-name {
+    position: absolute;
+    top: 215px;
+    width: 100%;
+    text-align: center;
+}
+
+.sub-header {
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.shake.ng-hide-remove {
+    -webkit-animation: shake 0.5s;
+    -moz-animation: shake 0.5s;
+    -ms-animation: shake 0.5s;
+    animation: shake 0.5s;
+}
+
+.pulse.ng-hide-remove {
+    -webkit-animation: pulse 0.25s;
+    -moz-animation: pulse 0.25s;
+    -ms-animation: pulse 0.25s;
+    animation: pulse 0.25s;
+}
+
 .profile-header {
-    padding-bottom: 15px;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
     background-color: #fafafa;
     border: 1px solid #ddd;
@@ -148,41 +175,8 @@ hr {
     border-top: none;
 }
 
-.card.ng-hide-add {
-    /*-webkit-animation: flipOutY 0.5s;
-    -moz-animation: flipOutY 0.5s;
-    -ms-animation: flipOutY 0.5s;
-    animation: flipOutY 0.5s;
-    -webkit-animation-delay: 0.0;
-    animation-delay: 0.0;*/
-}
-
-.card.ng-hide-remove {
-    /*-webkit-animation: flipInY 0.5s;
-    -moz-animation: flipInY 0.5s;
-    -ms-animation: flipInY 0.5s;
-    animation: flipInY 0.5s;
-    -webkit-animation-delay: 0.0;
-    animation-delay: 0;*/
-}
-
-.shake.ng-hide-remove {
-    -webkit-animation: shake 1s;
-    -moz-animation: shake 1s;
-    -ms-animation: shake 1s;
-    animation: shake 1s;
-}
-
-.pulse.ng-hide-remove {
-    -webkit-animation: pulse 0.5s;
-    -moz-animation: pulse 0.5s;
-    -ms-animation: pulse 0.5s;
-    animation: pulse 0.5s;
-}
-
 .profile-header__title {
     font-style: italic;
-    padding-top: 5px;
 }
 
 .profile-info__name,
