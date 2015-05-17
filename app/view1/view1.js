@@ -22,7 +22,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $rootScope.employeeList = [
         {
             name: "Ian Hograth",
-            description: "This employee got a master’s in machine learning at Cambridge and loves dystopian robot takeover narratives. Seven years ago, Ian realized being a choirboy came with no street cred, so he started DJing hip-hop, funk, drum & bass, and grime. Ian quit his job at Bain & Company, Singapore to start Songkick.",
+            description: "This employee got a master’s in machine learning at Cambridge and loves dystopian robot takeover narratives. Seven years ago, Ian realized being a choirboy came with no street cred, so he started DJing hip-hop, funk, drum & bass, and grime. He then quit his job at Bain & Company, Singapore to start Songkick.",
             title: "Co-founder, CEO",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/ih-790dea3.jpg"
         },
@@ -46,7 +46,7 @@ angular.module('myApp.view1', ['ngRoute'])
         },
         {
             name: "Gideon Bullock",
-            description: "This employee has been designing since the early 1990’s, across mobile, iTV, and the web. He was lead designer at the BBC, helming their homepage redesign in 2000. Since then, he was at Skype in their early years and started his own T-shirt design website. Gideon also DJs at a night called 99p Records in Shoreditch.",
+            description: "This employee has been designing since the early 1990’s, across mobile, iTV, and the web. He was lead designer at the BBC, helming their homepage redesign in 2000. Since then, he was at Skype in their early years and started his own T-shirt design website. He also DJs at a night called 99p Records in Shoreditch.",
             title: "Design Director",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/gb-636c84a.jpg"
         },
@@ -82,19 +82,19 @@ angular.module('myApp.view1', ['ngRoute'])
         },
         {
             name: "Tom Clark",
-            description: "This employee joined Songkick after working as a Product Manager for the Sibelius music notation software family. Prior to that he trained as a jazz saxophonist at Leeds College of Music. These days, instead of playing and composing music, he’s content performing the role of jazz snob. Tom owns a cat called Mingus.",
+            description: "This employee joined Songkick after working as a Product Manager for the Sibelius music notation software family. Prior to that he trained as a jazz saxophonist at Leeds College of Music. These days, instead of playing and composing music, he’s content performing the role of jazz snob. He owns a cat called Mingus.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/tom-e3ff7d6.jpg"
         },
         {
             name: "Elliot Hancock",
-            description: "This employee grew up making the weekly pilgrimage from Dorking to London for his gig fix, before choosing Manchester University exclusively for its live music scene. With a degree in Politics & Modern History, he festival-hopped his way around Europe and returned home to apply for the Songkick graduate internship. Elliot secretly loathes Songkick, and longs for a time when he knew about gigs before anyone else.",
+            description: "This employee grew up making the weekly pilgrimage from Dorking to London for his gig fix, before choosing Manchester University exclusively for its live music scene. With a degree in Politics & Modern History, he festival-hopped his way around Europe and returned home to apply for the Songkick graduate internship. He secretly loathes Songkick, and longs for a time when he knew about gigs before anyone else.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/elliot-d752a00.jpg"
         },
         {
             name: "Jamie Hughes",
-            description: "This employee was putting on gigs in his hometown before he was allowed to go to them. At university he used his student radio show as an excuse to go to gigs and interview the likes of Skream, Mumford & Sons and his teen idols 65DaysofStatic. Although he had a burgeoning career at a smoothie bar, Jamie decided he’d rather come work at Songkick.",
+            description: "This employee was putting on gigs in his hometown before he was allowed to go to them. At university he used his student radio show as an excuse to go to gigs and interview the likes of Skream, Mumford & Sons and his teen idols 65DaysofStatic. Although he had a burgeoning career at a smoothie bar, he decided he’d rather come work at Songkick.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/jamie-1bc0404.jpg"
         },
@@ -124,7 +124,7 @@ angular.module('myApp.view1', ['ngRoute'])
         },
         {
             name: "Adam McIsaac",
-            description: "This employee has more than a decade of experience in the live music industry. Somewhere in the attic he has a BA from McGill University and an MBA from Oxford University. When not at Songkick, Adam can be found building igloos with Celine Dion and The Biebs in his home country of Canada.",
+            description: "This employee has more than a decade of experience in the live music industry. Somewhere in the attic he has a BA from McGill University and an MBA from Oxford University. When not at Songkick, this employee can be found building igloos with Celine Dion and The Biebs in his home country of Canada.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/adam-b7a246c.jpg"
         },
@@ -167,7 +167,7 @@ angular.module('myApp.view1', ['ngRoute'])
         {
             name: "Karim Dia Toubajie",
             description: "This employee is an interaction designer/maker/artist whose face was once licked by a cow. The latest version is powered only by bacon and coffee and has Zero CO2 Emissions.",
-            title: "Ace",
+            title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/karim-960b99f.jpg"
         },
         {

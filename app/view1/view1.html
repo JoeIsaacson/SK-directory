@@ -8,13 +8,14 @@
     <div class="" ng-show="count > 0">
         <div ng-repeat="employee in employeeList" ng-show="$index === count-1">
             <img class="profile-img" src="{{ employee.image }}"></img>
+            <!--List of possible people-->
+            <div class="profile-header text-center">
+                <h2 class="sub-header" ng-show="!resultsVisible">Who am I?</h2>
+                <h2 class="sub-header" ng-class="{'success': correctAnswer, 'failure': !correctAnswer}" ng-show="resultsVisible">{{ employee.name }}</h2>
+                <p class="profile-header__title text-center weak">{{ employee.title }}</p>
+            </div>
+            <!--Profile Info-->
             <div class="profile-info">
-                <!--List of possible people-->
-                <div class="results">
-                    <h2 class="sub-header" ng-show="!resultsVisible">Who am I?</h2>
-                    <h2 class="sub-header success" ng-show="correctAnswer && resultsVisible">Correct!</h2>
-                    <h2 class="sub-header failure" ng-show="!correctAnswer && resultsVisible">Nah dude</h2>
-                </div>
                 <!--List of possible people-->
                 <div class="basic-list">
                     <button
@@ -25,13 +26,12 @@
                         {{ person }}
                     </button>
                 </div>
-                <p class="profile-info__title">{{ employee.title }}</p>
                 <!--Action Buttons-->
             </div>
 
             <div class="bio-info" ng-show="descriptionShown">
                 <hr class="bio-info--header">
-                <p class="profile-info__description bio-info--paragraph">{{ employee.description }}</p>
+                <p class="profile-info__description bio-info--paragraph weak">{{ employee.description }}</p>
             </div>
 
             <div class="bottom-btn bottom-default btn" ng-hide="descriptionShown" ng-click="showDescription()">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="bottom-btn bottom-default btn" ng-show="descriptionShown" ng-click="hideDescription()">
-                <a class="profile-info__button">Close</a>
+                <a class="profile-info__button">Hide Bio</a>
             </div>
         </div>
 
