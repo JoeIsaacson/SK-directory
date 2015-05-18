@@ -152,17 +152,17 @@ hr {
 }
 
 .shake.ng-hide-remove {
-    -webkit-animation: shake 0.5s;
-    -moz-animation: shake 0.5s;
-    -ms-animation: shake 0.5s;
-    animation: shake 0.5s;
+    -webkit-animation: shake 1s;
+    -moz-animation: shake 1s;
+    -ms-animation: shake 1s;
+    animation: shake 1s;
 }
 
 .pulse.ng-hide-remove {
-    -webkit-animation: pulse 0.25s;
-    -moz-animation: pulse 0.25s;
-    -ms-animation: pulse 0.25s;
-    animation: pulse 0.25s;
+    -webkit-animation: pulse 0.5s;
+    -moz-animation: pulse 0.5s;
+    -ms-animation: pulse 0.5s;
+    animation: pulse 0.5s;
 }
 
 .profile-header {
