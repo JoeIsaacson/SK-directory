@@ -2,7 +2,6 @@
     <div class="profile-img-container">
         <img class="profile-img img--responsive" src="starter-img.jpg"></img>
     </div>
-    <!-- <h1 class="app-header">Guess the SongKick Employee</h1> -->
     <div class="bottom-btn bottom-primary btn" ng-click="showNext()">Start</div>
 </div>
 
@@ -21,7 +20,11 @@
         </div>
         <!--Name-->
         <div class="profile-header text-center">
-            <p class="profile-header__title text-center weak">{{ employee.title }}</p>
+            <p class="profile-header__title text-center weak" ng-hide="resultsVisible">{{ employee.title }}</p>
+            <div ng-show="resultsVisible">
+                <p class="profile-header__title text-center success" ng-show="correctAnswer">Correct!</p>
+                <p class="profile-header__title text-center failure" ng-hide="correctAnswer">Nope!</p>
+            </div>
         </div>
 
         <!--Profile Info-->
@@ -32,7 +35,8 @@
                     class="possible-name basic-list--option btn"
                     ng-class="{'selected': person === selectedName }"
                     ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy"
-                    ng-click="selectPerson(person)">
+                    ng-click="selectPerson(person)"
+                    ng-disabled="resultsVisible">
                     {{ person }}
                 </button>
             </div>
@@ -61,9 +65,9 @@
     <div class="results-info">
         <p>You were <span ng-class="{'success': successRate >= 0.5, 'failure': successRate < 0.5,}"><b>{{ correctAnswers }} / {{ count-1 }}</b></p>
         <hr class="results-info__hr">
-        <p ng-show="successRate === 0">That was awful.</p>
-        <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work.</p>
-        <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv.</p>
+        <p ng-show="successRate === 0">That was awful. You should look at the list of people you got wrong.</p>
+        <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work, and look at the list of people you got wrong.</p>
+        <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv. And definitely look at the list of people you got wrong.</p>
         <p ng-show="successRate == 1">Very well done! Contact Adam Schuster for a Starbucks Gift Certificate!</p>
         <p ng-show="successRate == 1">
             <br>
@@ -71,10 +75,10 @@
         </p>
     </div>
 
-    <hr>
+    <hr ng-show="successRate < 1">
 
-    <div class="results-info" ng-show="resultsArray.length > 0">
-        <h3>You don't know the following people.</h3>
+    <div class="results-info" ng-show="successRate < 1">
+        <h4 class="text-center">Names you missed</h4>
         <ul class="block-list">
             <li class="wrong-names block-list--item" ng-repeat="employee in employeeList" ng-hide="resultsArray[$index] == 'right'">
                 <img class="wrong-names__profile-img img--responsive" src="{{ employee.image }}"></img>

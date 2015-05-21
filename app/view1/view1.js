@@ -253,7 +253,7 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.resultsArray = [];
 
     $scope.selectPerson = function(person) {
-
+                
         if ($scope.employeeList.length >= $scope.count) {
             $scope.selectedName = person;
             $scope.resultsVisible = true;
