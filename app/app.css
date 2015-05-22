@@ -23,16 +23,11 @@ hr {
 }
 
 .success {
-    color: green;
+    color: #42940A;
 }
 
 .failure {
-    color: red;
-}
-
-.failure .sub-header {
-    background-color: #f80046;
-    color: #f1f1f1;
+    color: #DF0000;
 }
 
 .weak {
@@ -96,24 +91,27 @@ hr {
 
 .basic-list {
     list-style: none;
-    margin-left: -1px;
-    margin-right: -1px;
+    /*margin: 10px;*/
 }
 
 .btn.basic-list--option {
     cursor: pointer;
     background-color: #fff;
-    border-radius: 6px;
-    margin: 0px 0;
-    padding: 20px 15px;
+    padding: 15px;
     width: 100%;
     border-radius: 0;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
 }
 
 .btn.basic-list--option:not(:last-of-type) {
     border-bottom: 1px solid #ddd;
+}
+
+/*.btn.basic-list--option:first-of-type {
+    border-radius: 4px 4px 0px 0px;
+}*/
+
+.btn.basic-list--option:last-of-type {
+    border-radius: 0px 0px 4px 4px;
 }
 
 .btn.basic-list--option:hover {
@@ -165,8 +163,30 @@ hr {
     animation: bounce 1s;
 }
 
+.flip-in.ng-hide-remove {
+    -webkit-animation: flipInX 1s;
+    -moz-animation: flipInX 1s;
+    -ms-animation: flipInX 1s;
+    animation: flipInX 1s;
+}
+
+.pulse.ng-hide-remove {
+    -webkit-animation: pulse 1s;
+    -moz-animation: pulse 1s;
+    -ms-animation: pulse 1s;
+    animation: pulse 1s;
+}
+
+.test.ng-hide-remove {
+    -webkit-animation: slideInUp 1s;
+    -moz-animation: slideInUp 1s;
+    -ms-animation: slideInUp 1s;
+    animation: slideInUp 1s;
+}
+
+
 .profile-header {
-    padding: 10px;
+    padding: 15px 10px 10px;
     border-bottom: 1px solid #ddd;
     background-color: #fafafa;
     border: 1px solid #ddd;
@@ -177,6 +197,14 @@ hr {
 
 .profile-header__title {
     font-style: italic;
+}
+
+.profile-header__title.success,
+.profile-header__title.failure {
+    font-style: inherit;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 8px;
 }
 
 .profile-info__name,
@@ -195,21 +223,14 @@ hr {
     margin: 10px 0 5px;
 }
 
-.profile-info__description {
-    padding-top: 15px;
-}
-
-.bio-info--header {
-    margin-bottom: 20px;
-}
-
 .bio-info--paragraph {
-    padding: 0 20px 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
 .btn {
-    width: 100%;
     font-size: 14px;
+    display: inline-block;
     line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
@@ -224,13 +245,24 @@ hr {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 3px;
+    padding: 10px 12px;
+}
+
+.btn--small {
+    padding: 6px 10px;
 }
 
 .btn:focus {
     outline:0;
 }
 
+.btn--default {
+    background-color: #DDD;
+    color: #555;
+}
+
 .bottom-btn  {
+    width: 100%;
     padding: 15px 0;
     font-weight: bold;
     text-align: center;
@@ -243,9 +275,10 @@ hr {
     color: #fff;
 }
 
-.bottom-btn.bottom-default {
-    background-color: #DDD;
-    color: #555;
+.bio-btn {
+    margin: 10px 0 5px;
+    display: block;
+    border-radius: 20px;
 }
 
 .success-image {

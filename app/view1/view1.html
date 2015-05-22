@@ -13,19 +13,34 @@
                 <h2 class="sub-header">Who am I?</h2>
             </div>
             <div ng-show="resultsVisible">
-                <div class="profile-name" ng-class="{'bounce': correctAnswer, 'failure shake': !correctAnswer}" ng-show="resultsVisible">
+                <div class="profile-name" ng-class="{'bounce': correctAnswer, 'shake': !correctAnswer}" ng-show="resultsVisible">
                     <h2 class="sub-header">{{ employee.name }}</h2>
                 </div>
             </div>
         </div>
         <!--Name-->
-        <div class="profile-header text-center">
-            <p class="profile-header__title text-center weak" ng-hide="resultsVisible">{{ employee.title }}</p>
+        <div class="profile-header text-center test">
+            <p class="profile-header__title text-center weak">{{ employee.title }}</p>
+
+            <div ng-hide="resultsVisible">
+                <div class="bio-btn btn btn--small btn--default" ng-hide="descriptionShown" ng-click="showDescription()">
+                    Show Bio &rsaquo;
+                </div>
+                <div class="bio-btn btn btn--small btn--default" ng-show="descriptionShown" ng-click="hideDescription()">
+                    Hide Bio &rsaquo;
+                </div>
+            </div>
+            <!--Results-->
             <div ng-show="resultsVisible">
-                <p class="profile-header__title text-center success" ng-show="correctAnswer">Correct!</p>
-                <p class="profile-header__title text-center failure" ng-hide="correctAnswer">Nope!</p>
+                <p class="profile-header__title text-center pulse" ng-show="resultsVisible" ng-class="{'success': correctAnswer, 'failure': !correctAnswer }">
+                    <span ng-show="correctAnswer">Correct! You are {{ correctAnswers }} / {{ count }}</span>
+                    <span ng-hide="correctAnswer">Nope! You are {{ correctAnswers }} / {{ count }}</span>
+                </p>
             </div>
         </div>
+
+        <!-- Biography -->
+        <p class="bio-info bio-info--paragraph weak test" ng-show="descriptionShown">{{ employee.description }}</p>
 
         <!--Profile Info-->
         <div class="profile-info">
@@ -43,18 +58,6 @@
             <!--Action Buttons-->
         </div>
 
-        <div class="bio-info" ng-show="descriptionShown">
-            <hr class="bio-info--header">
-            <p class="profile-info__description bio-info--paragraph weak">{{ employee.description }}</p>
-        </div>
-
-        <div class="bottom-btn bottom-default btn" ng-hide="descriptionShown" ng-click="showDescription()">
-            <a class="profile-info__button">Show Bio &rsaquo;</a>
-        </div>
-
-        <div class="bottom-btn bottom-default btn" ng-show="descriptionShown" ng-click="hideDescription()">
-            <a class="profile-info__button">Hide Bio</a>
-        </div>
         <div class="bottom-btn bottom-primary btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
     </div>
 
