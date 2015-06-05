@@ -11,6 +11,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope', '$rootScope', function($scope, $rootScope) {
 
+    // Basic Settings
     $scope.randomSelection = null;
     $scope.nameShown = false;
     $scope.descriptionShown = false;
@@ -19,167 +20,567 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.correctAnswers = 0;
     $scope.incorrectAnswers = 0;
 
-    $rootScope.employeeList = [
+    $scope.selectDirectory = function(selectedDirectory) {
+        console.log(selectedDirectory);
+
+        if (selectedDirectory === "SK") {
+            $rootScope.employeeList = $scope.employeeListSK;
+            makeList();
+            $scope.showNext();
+        } else {
+            $rootScope.employeeList = $scope.employeeListCS;
+            makeList();
+            $scope.showNext();
+        };
+
+    };
+
+    $scope.employeeListCS = [
+        {
+            name: "Josh Adams",
+            title: "Information Technology Manager",
+            image: "images/CrowdSurge/1.png"
+        },
+        {
+            name: "Alyea Afzal",
+            title: "Commercial Coordinator",
+            image: "images/CrowdSurge/2.jpg"
+        },
+        {
+            name: "Jon Attfield",
+            title: "Designer Manager",
+            image: "images/CrowdSurge/3.jpg"
+        },
+        {
+            name: "Dan Bagnall",
+            title: "Client Services",
+            image: "images/CrowdSurge/4.jpg"
+        },
+        {
+            name: "Josh Baron",
+            title: "Business Development",
+            image: "images/CrowdSurge/5.jpg"
+        },
+        {
+            name: "Laura Becker",
+            title: "Director of Sales",
+            image: "images/CrowdSurge/6.jpg"
+        },
+        {
+            name: "Jesse Bellin",
+            title: "Director of Client Services",
+            image: "images/CrowdSurge/7.jpg"
+        },
+        {
+            name: "Kyle Bolt",
+            title: "Ticketing Operations Coordinator",
+            image: "images/CrowdSurge/8.jpg"
+        },
+        {
+            name: "Shaun Burke",
+            title: "Campaign Operations Manager",
+            image: "images/CrowdSurge/9.jpg"
+        },
+        {
+            name: "Caitlin Came",
+            title: "Marketing Coordinator",
+            image: "images/CrowdSurge/10.jpg"
+        },
+        {
+            name: "Gonzalo Castro",
+            title: "Client Services",
+            image: "images/CrowdSurge/11.jpg"
+        },
+        {
+            name: "Johanna Cherry",
+            title: "Software Engineer",
+            image: "images/CrowdSurge/12.jpg"
+        },
+        {
+            name: "Jake Cohen",
+            title: "Business Development, Strategy Manager",
+            image: "images/CrowdSurge/13.jpg"
+        },
+        {
+            name: "Meredith Croy",
+            title: "Client Services Manager",
+            image: "images/CrowdSurge/14.jpg"
+        },
+        {
+            name: "Zack Davenport",
+            title: "Business Development Assistant",
+            image: "images/CrowdSurge/15.jpg"
+        },
+        {
+            name: "Andy Deeley",
+            title: "Financial Controller",
+            image: "images/CrowdSurge/16.jpg"
+        },
+        {
+            name: "Bill Domanick",
+            title: "Web Designer",
+            image: "images/CrowdSurge/17.jpg"
+        },
+        {
+            name: "Christine Dombrowski",
+            title: "Ticketing Operations",
+            image: "images/CrowdSurge/18.jpg"
+        },
+        {
+            name: "Mac Donoghue",
+            title: "Client Services Coordinator",
+            image: "images/CrowdSurge/19.jpg"
+        },
+        {
+            name: "Kendyl Dunn",
+            title: "Customer Service",
+            image: "images/CrowdSurge/20.jpg"
+        },
+        {
+            name: "Leona Edwards",
+            title: "Customer Service",
+            image: "images/CrowdSurge/21.jpg"
+        },
+        {
+            name: "Noel Edwards",
+            title: "Business Development, Strategy Manager",
+            image: "images/CrowdSurge/22.jpg"
+        },
+        {
+            name: "Dean Elbaz",
+            title: "Software Engineer",
+            image: "images/CrowdSurge/23.jpg"
+        },
+        {
+            name: "Ewan Eyre",
+            title: "Fulfillment Coordinator",
+            image: "images/CrowdSurge/24.jpg"
+        },
+        {
+            name: "Ricky Faillace",
+            title: "Ticketing Operations Manager",
+            image: "images/CrowdSurge/25.jpg"
+        },
+        {
+            name: "Yamile Fernandez",
+            title: "Business Development",
+            image: "images/CrowdSurge/26.jpg"
+        },
+        {
+            name: "Matt Flanagan",
+            title: "Finance Program Manager",
+            image: "images/CrowdSurge/27.jpg"
+        },
+        {
+            name: "Andrea Frey",
+            title: "Human Resources Manager",
+            image: "images/CrowdSurge/28.jpg"
+        },
+        {
+            name: "Stephen Glicken",
+            title: "Director of Business Development",
+            image: "images/CrowdSurge/29.jpg"
+        },
+        {
+            name: "Brigitte Gomez",
+            title: "Customer Service",
+            image: "images/CrowdSurge/30.jpg"
+        },
+        {
+            name: "Lauren Gottlieb",
+            title: "Human Resources Assistant",
+            image: "images/CrowdSurge/31.jpg"
+        },
+        {
+            name: "Lydia Hecomovich",
+            title: "Ticketing Operations Coordinator",
+            image: "images/CrowdSurge/32.jpg"
+        },
+        {
+            name: "Eddie Herdemian",
+            title: "Product Manager",
+            image: "images/CrowdSurge/33.jpg"
+        },
+        {
+            name: "Paul Herdemian",
+            title: "VP of Operations and Finance",
+            image: "images/CrowdSurge/34.jpg"
+        },
+        {
+            name: "Ryan Herrmann",
+            title: "Business Development",
+            image: "images/CrowdSurge/35.jpg"
+        },
+        {
+            name: "Ben Hodgson",
+            title: "Front-End Developer",
+            image: "images/CrowdSurge/36.jpg"
+        },
+        {
+            name: "Joey Isaacson",
+            title: "Product Designer",
+            image: "images/CrowdSurge/37.jpg"
+        },
+        {
+            name: "Matt Jones",
+            title: "Chief Executive Officer",
+            image: "images/CrowdSurge/38.jpg"
+        },
+        {
+            name: "Gareth Jones",
+            title: "Business Development",
+            image: "images/CrowdSurge/39.jpg"
+        },
+        {
+            name: "Mark Kemp",
+            title: "Operations Manager",
+            image: "images/CrowdSurge/40.jpg"
+        },
+        {
+            name: "Yi Lin",
+            title: "Web Designer",
+            image: "images/CrowdSurge/41.jpg"
+        },
+        {
+            name: "Christian Marchand",
+            title: "Accounting Associate",
+            image: "images/CrowdSurge/42.jpg"
+        },
+        {
+            name: "Alison McCowan",
+            title: "Fulfillment Coordinator",
+            image: "images/CrowdSurge/43.jpg"
+        },
+        {
+            name: "Mark McIntyre",
+            title: "VP of Engineering",
+            image: "images/CrowdSurge/44.jpg"
+        },
+        {
+            name: "Elyse McKenna",
+            title: "Business Development",
+            image: "images/CrowdSurge/45.jpg"
+        },
+        {
+            name: "Antonio Mello",
+            title: "Managing Director",
+            image: "images/CrowdSurge/46.jpg"
+        },
+        {
+            name: "Callum Merriman",
+            title: "Product Manager",
+            image: "images/CrowdSurge/47.jpg"
+        },
+        {
+            name: "Conor Moran",
+            title: "Marketing Operations",
+            image: "images/CrowdSurge/48.jpg"
+        },
+        {
+            name: "Charlie Morrison",
+            title: "Human Resources and Office Manager",
+            image: "images/CrowdSurge/49.jpg"
+        },
+        {
+            name: "Matt Nelson",
+            title: "Fulfillment Coordinator",
+            image: "images/CrowdSurge/50.jpg"
+        },
+        {
+            name: "Rachel Owusu-Tuffour",
+            title: "Customer Service",
+            image: "images/CrowdSurge/51.jpg"
+        },
+        {
+            name: "Wilson Palmer",
+            title: "Commercial Coordinator",
+            image: "images/CrowdSurge/52.jpg"
+        },
+        {
+            name: "Amy Polacsek",
+            title: "Ticketing Operations, Special Projects",
+            image: "images/CrowdSurge/53.jpg"
+        },
+        {
+            name: "Justin Prescott",
+            title: "Assistant Controller",
+            image: "images/CrowdSurge/54.jpg"
+        },
+        {
+            name: "Glenn Ray",
+            title: "Executive Vice President",
+            image: "images/CrowdSurge/55.jpg"
+        },
+        {
+            name: "Lindsey Rothschild",
+            title: "Executive Assistant",
+            image: "images/CrowdSurge/56.jpg"
+        },
+        {
+            name: "Lauren Rothschild",
+            title: "Customer Service",
+            image: "images/CrowdSurge/57.jpg"
+        },
+        {
+            name: "Dave Rowett",
+            title: "Industry Relations",
+            image: "images/CrowdSurge/58.jpg"
+        },
+        {
+            name: "Will Salt",
+            title: "Dev Ops",
+            image: "images/CrowdSurge/59.jpg"
+        },
+        {
+            name: "Elena Sansigre Silva",
+            title: "Customer Service",
+            image: "images/CrowdSurge/60.jpg"
+        },
+        {
+            name: "Adam Schiffer",
+            title: "Chief Operating Officer",
+            image: "images/CrowdSurge/61.jpg"
+        },
+        {
+            name: "Ian Schiffer",
+            title: "Business Development Operations Manager",
+            image: "images/CrowdSurge/62.jpg"
+        },
+        {
+            name: "Greg Schmale",
+            title: "VP of Industry Relations",
+            image: "images/CrowdSurge/63.jpg"
+        },
+        {
+            name: "Adam Schuster",
+            title: "Director of Human Resources",
+            image: "images/CrowdSurge/64.jpg"
+        },
+        {
+            name: "Ryan Simms",
+            title: "Director of Architecture & Development",
+            image: "images/CrowdSurge/65.jpg"
+        },
+        {
+            name: "Alex Shellim",
+            title: "Web Designer",
+            image: "images/CrowdSurge/66.jpg"
+        },
+        {
+            name: "Francesca Stabile",
+            title: "Operations Manager",
+            image: "images/CrowdSurge/67.jpg"
+        },
+        {
+            name: "Nina Thistlethwaite",
+            title: "Ticketing Operations Coordinator",
+            image: "images/CrowdSurge/68.jpg"
+        },
+        {
+            name: "Matt Vail",
+            title: "Chief of Staff",
+            image: "images/CrowdSurge/69.jpg"
+        },
+        {
+            name: "Stephen Vallimarescu",
+            title: "Business Development Associate",
+            image: "images/CrowdSurge/70.jpg"
+        },
+        {
+            name: "Leonie Wakeman",
+            title: "Client Services",
+            image: "images/CrowdSurge/71.jpg"
+        },
+        {
+            name: "Merry Webster",
+            title: "Customer Service Manager",
+            image: "images/CrowdSurge/72.jpg"
+        },
+        {
+            name: "Jake Williams",
+            title: "Ticketing Operations",
+            image: "images/CrowdSurge/73.jpg"
+        },
+        {
+            name: "Jamie Wright",
+            title: "Developer",
+            image: "images/CrowdSurge/74.jpg"
+        },
+        {
+            name: "Michelle Wood",
+            title: "Client Services Manager",
+            image: "images/CrowdSurge/75.jpg"
+        },
+        {
+            name: "Allison Winkler",
+            title: "Head of Philanthropy",
+            image: "images/CrowdSurge/76.jpg"
+        }
+    ];
+
+
+
+    $scope.employeeListSK = [
         {
             name: "Ian Hograth",
-            description: "This employee got a master’s in machine learning at Cambridge and loves dystopian robot takeover narratives. Seven years ago, Ian realized being a choirboy came with no street cred, so he started DJing hip-hop, funk, drum & bass, and grime. He then quit his job at Bain & Company, Singapore to start Songkick.",
             title: "Co-founder, CEO",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/ih-790dea3.jpg"
+            image: "images/Songkick/IMG_1759.JPG"
         },
         {
             name: "Michelle You",
-            description: "This employee studied English and philosophy at Columbia before receiving her master’s in English at Cambridge, all of which was training for writing the snappy copy you read on Songkick. She was the managing editor of Theme magazine before starting Songkick.",
             title: "Co-founder, Chief Product Officer",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/my-6fab8b8.jpg"
+            image: "images/Songkick/IMG_1752.JPG"
         },
         {
             name: "Dan Crow",
-            description: "This employee enjoys watching other people play music. He joined Songkick from Google where he spent five years working on search. He lived in Silicon Valley for 10 years, working at Apple and a bunch of startups including co-founding Blurb. He has a PhD in AI and a degree in Computer Science, both from Leeds University.",
             title: "CTO",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/dc-c850a92.jpg"
+            image: "images/Songkick/IMG_1760.JPG"
         },
         {
             name: "David Anderson",
-            description: "This employee joined Songkick from Google, prior to which he worked as a strategy consultant, and ran a small not-for-profit company. David studied Natural Sciences and Management at Cambridge University, and outside of work enjoys eating (and occasionally cooking) fine food, playing a competitive round of golf, and spending an afternoon watching the latest HBO boxset.",
             title: "Operations Director",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/da-f566223.jpg"
+            image: "images/Songkick/IMG_1738.JPG"
         },
         {
             name: "Gideon Bullock",
-            description: "This employee has been designing since the early 1990’s, across mobile, iTV, and the web. He was lead designer at the BBC, helming their homepage redesign in 2000. Since then, he was at Skype in their early years and started his own T-shirt design website. He also DJs at a night called 99p Records in Shoreditch.",
             title: "Design Director",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/gb-636c84a.jpg"
+            image: "images/Songkick/IMG_1757.JPG"
         }
         ,
         {
             name: "Marc Pacheco",
-            description: "Before joining Songkick, this employee lead the client-side development of the Guardian’s R2 project, which, over the course of 2.5 years, moved the entire website onto a more modern and robust platform. Before that, he worked on a wide variety of standards-compliant websites for the likes of Unilever, BT, Sky, and Halifax.",
             title: "Client-side Architect",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/marc-4f313f3.png"
+            image: "images/Songkick/IMG_1756.JPG"
         },
         {
             name: "Vivien Barousse",
-            description: "This employee came to the UK from Montpellier, France to study for a master’s degree at Brookes University in Oxford. He then moved to London to start working at Songkick. Besides writing code, Vivien enjoys writing more code, climbing stuff, and snowboarding.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/vivien-c7a7b55.jpg"
+            image: "images/Songkick/IMG_1729.JPG"
         },
         {
             name: "Daniel Lucraft ",
-            description: "This employee has a Master’s in probability from Durham University, and came to Songkick in 2008 as a Junior Developer from an ill-fated PhD programme. He likes writing software for fun and has presented at a number of Ruby conferences.",
             title: "Chief Architect",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/dl-1c25747.jpg"
+            image: "images/Songkick/IMG_1744.JPG"
         },
         {
             name: "Alexey Blinov",
-            description: "This employee grew up in rural Russia, where he spent his teenage years drooling over the gigs on the back pages of NME that he borrowed from the local British Council library. He then moved to Christchurch, New Zealand where he got his B.Sc. in Computer Science. Having grown tired of paying for an airfare any time he wanted to see a band he eventually moved to London. In his spare time he likes to brew things (mainly beer and coffee).",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/alexey-591e7cd.jpg"
+            image: "images/Songkick/IMG_1751.JPG"
         },
         {
             name: "Sam Briggs",
-            description: "This employee joined Songkick after working as a music journalist, running his own theatre and events company, failing as a folk singer, giving up a burgeoning career dressing up as a friendly alien at an indoor children’s playground and winning Beaver of the Year 1998. These days, he enjoys growing his beard and listening to Springsteen.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/sr-1b8ee30.jpg"
         },
         {
             name: "Tom Clark",
-            description: "This employee joined Songkick after working as a Product Manager for the Sibelius music notation software family. Prior to that he trained as a jazz saxophonist at Leeds College of Music. These days, instead of playing and composing music, he’s content performing the role of jazz snob. He owns a cat called Mingus.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/tom-e3ff7d6.jpg"
+            image: "images/Songkick/IMG_1731.JPG"
         },
         {
             name: "Elliot Hancock",
-            description: "This employee grew up making the weekly pilgrimage from Dorking to London for his gig fix, before choosing Manchester University exclusively for its live music scene. With a degree in Politics & Modern History, he festival-hopped his way around Europe and returned home to apply for the Songkick graduate internship. He secretly loathes Songkick, and longs for a time when he knew about gigs before anyone else.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/elliot-d752a00.jpg"
+            image: "images/Songkick/IMG_1743.JPG"
         },
         {
             name: "Jamie Hughes",
-            description: "This employee was putting on gigs in his hometown before he was allowed to go to them. At university he used his student radio show as an excuse to go to gigs and interview the likes of Skream, Mumford & Sons and his teen idols 65DaysofStatic. Although he had a burgeoning career at a smoothie bar, he decided he’d rather come work at Songkick.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/jamie-1bc0404.jpg"
+            image: "images/Songkick/IMG_1749.JPG"
         },
         {
             name: "Paul Lawson",
-            description: "This employee has a degree in maths from Oxford University, and a PhD from Leeds University. Prior to software development, he was an operational research analyst in the Civil Service. Besides writing code and going to gigs, Paul enjoys playing darts for his pub team, hiking in the Scottish mountains, playing guitar, and the occasional friendly game of poker.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/paul-aa35973.jpg"
+            image: "images/Songkick/IMG_1748.JPG"
         },
         {
             name: "Tracey Lee-Joe",
-            description: "This employee is a user experience designer. When she’s not in the office or attending Human-Computer Interaction classes, you’ll find her at a gig or eating-out.",
             title: "User-experience Designer",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/tracey-c23dea6.jpg"
         },
         {
             name: "Sabrina Leandro",
-            description: "This employee left a sunny island in Brazil to do a MSc in software engineering at Queen Mary, University of London. Before that, she worked at Grupos Internet, an e-learning company. Her main reason for moving to London is the live music scene, especially concerts of sweet indiepop sounds. Sabrina goes to more concerts than anyone else at Songkick!",
             title: "Director of Engineering",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/sl-759e4d5.jpg"
+            image: "images/Songkick/IMG_1726.JPG"
         },
         {
-            name: "Thomas May",
-            description: "This employee studied Maths at Oxford University before gaining an MA in pop music at its younger, cooler sibling Oxford Brookes. Outside the office, when he’s not reading Robert Christgau, he’s trying to sound like Robert Christgau as a music journalist in the likes of Loud And Quiet and the Quietus.",
+            name: "Tom May",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/tmay-404674b.jpg"
+            image: "images/Songkick/IMG_1732.JPG"
         },
         {
             name: "Adam McIsaac",
-            description: "This employee has more than a decade of experience in the live music industry. Somewhere in the attic he has a BA from McGill University and an MBA from Oxford University. When not at Songkick, this employee can be found building igloos with Celine Dion and The Biebs in his home country of Canada.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/adam-b7a246c.jpg"
         },
         {
             name: "Michael Orland",
-            description: "This employee joined a start-up immediately after graduating university and has been working at start-ups ever since, primarily to keep current with youth culture and avoid direct sunlight. Working for Songkick in London achieves both. His academic background is in Economics and Cognitive Neuroscience, with an MBA as garnish.",
             title: "Chief Revenue Officer",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/morland-38d0fdf.jpg"
+            image: "images/Songkick/IMG_1724.JPG"
         },
         {
             name: "Brooke Parrott",
-            description: "This employee attended Berklee College of Music in Boston on scholarship, studying songwriting and piano. In May 2008, she released her debut album, Another City, on her record label, Ten til Six Records. (Available on iTunes) She plays gigs throughout London, so check out her Songkick artist page.",
             title: "Songkick Soldier",
             image: "https://assets.sk-static.com/assets/nw/static-pages/team/bp-4c0d6e2.jpg"
         },
         {
             name: "Aaron Randall",
-            description: "This employee studying for a degree in Software Engineering, Amy discovered that the skills she’d previously used only to test people’s patience could also be used to test software. Amy has previously been a QA at Yahoo! and The Guardian.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/aaron-31e8e24.jpg"
+            image: "images/Songkick/IMG_1728.JPG"
         },
         {
             name: "Sam Rudge",
-            description: "This employee started his career as a freelance web developer, before taking a position building e-commerce solutions for YouTubers. During this time he discovered a love of infrastructure, and now spends his days at Songkick looking at graphs and moving servers about. He also takes lots of photos and can often be seen on trains drinking coffee.",
             title: "Infrastructure Engineer",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/sam-55a7c64.jpg"
+            image: "images/Songkick/IMG_1735.JPG"
         },
         {
             name: "Emily Sergent",
-            description: "This employee studied Geography at University College London. After a short stint in marketing, she realized she wasn’t ready for the whole career thing, so she travelled around the world for 5 months. On her return, she studied for a journalism diploma at Harlow college. She reads and responds to our feedback, so if you write to us, you’re in good hands!",
             title: "Head of Community",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/emily-7446981.jpg"
+            image: "images/Songkick/IMG_1736.JPG"
         },
         {
             name: "Paul Springett",
-            description: "This employee studied Computer Science at Cardiff University before moving to Bristol where he worked for a number of agencies and startups. Looking to combine a passion for live music and programming he moved to London to join Songkick. In his spare time you'll find him teaching others about programming or out on the water sailing and scuba-diving.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/paul-springett-a64d818.jpg"
+            image: "images/Songkick/IMG_1745.JPG"
         },
         {
             name: "Karim Dia Toubajie",
-            description: "This employee is an interaction designer/maker/artist whose face was once licked by a cow. The latest version is powered only by bacon and coffee and has Zero CO2 Emissions.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/karim-960b99f.jpg"
+            image: "images/Songkick/IMG_3718.JPG"
         },
         {
             name: "Robin Tweedie",
-            description: "This employee grew up in Cape Town and has introduced team Songkick to Die Antwoord—no small achievement. He took trumpet lessons to avoid taking accounting in high school and briefly played in a ska/punk band. After graduating from University of Cape Town with a double-major in Computer Science and Psychology, he moved to London to see more bands.",
             title: "Songkick Soldier",
-            image: "https://assets.sk-static.com/assets/nw/static-pages/team/deathwarmedover-7d6e22a.jpg"
+            image: "images/Songkick/IMG_1734.JPG"
+        },
+        {
+            name: "Aaron Rodgers",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1727.JPG"
+        },
+        {
+            name: "Amy Phillips",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1733.JPG"
+        },
+        {
+            name: "Lucy Wardley",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1740.JPG"
+        },
+        {
+            name: "Kalyn Dobbs",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1741.JPG"
+        },
+        {
+            name: "James Gibb",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1742.JPG"
         }
     ];
 
     var setList = [];
+
 
     var makeList = function() {
 
@@ -201,20 +602,12 @@ angular.module('myApp.view1', ['ngRoute'])
             };
         };
 
-    };
+        console.log(setList);
 
-    makeList();
+    };
 
     $scope.showName = function() {
         $scope.nameShown = true;
-    };
-
-    $scope.showDescription = function() {
-        $scope.descriptionShown = true;
-    };
-
-    $scope.hideDescription = function() {
-        $scope.descriptionShown = false;
     };
 
     $scope.showNext = function() {
@@ -237,12 +630,13 @@ angular.module('myApp.view1', ['ngRoute'])
             $scope.listOfPeople = [$scope.employeeOne, $scope.employeeTwo, $scope.employeeThree];
 
             // RANDOMIZE THE LIST
-
             $scope.generateRandomOrderBy = function(){
                 $scope.randomOrderBy = Math.random();
             };
 
+            // a random number to randomize the list
             $scope.generateRandomOrderBy();
+
         } else {
             // console.log("finished!");
             console.log($scope.successRate = $scope.correctAnswers / ($scope.count-1));

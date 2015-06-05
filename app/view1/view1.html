@@ -1,92 +1,85 @@
-<div class="card" ng-show="count < 1">
-    <div class="profile-img-container">
-        <img class="profile-img img--responsive" src="starter-img.jpg"></img>
-    </div>
-    <div class="bottom-btn bottom-primary btn" ng-click="showNext()">Start</div>
-</div>
+<div class="panel panel--left" ng-click="selectDirectory('SK')"></div>
+<div class="panel panel--right" ng-click="selectDirectory('CS')"></div>
 
-<div ng-show="count > 0">
-    <div class="card" ng-repeat="employee in employeeList" ng-show="$index === count-1">
+<div class="container">
+    <div class="card" ng-show="count < 1">
         <div class="profile-img-container">
-            <img class="profile-img img--responsive" src="{{ employee.image }}"></img>
-            <div class="profile-name" ng-show="!resultsVisible">
-                <h2 class="sub-header">Who am I?</h2>
-            </div>
-            <div ng-show="resultsVisible">
-                <div class="profile-name" ng-class="{'bounce': correctAnswer, 'shake': !correctAnswer}" ng-show="resultsVisible">
-                    <h2 class="sub-header">{{ employee.name }}</h2>
-                </div>
-            </div>
+            <img class="profile-img img--responsive" src="starter-img.jpg"></img>
         </div>
-        <!--Name-->
-        <div class="profile-header text-center test">
-            <p class="profile-header__title text-center weak">{{ employee.title }}</p>
-
-            <div ng-hide="resultsVisible">
-                <div class="bio-btn btn btn--small btn--default" ng-hide="descriptionShown" ng-click="showDescription()">
-                    Show Bio &rsaquo;
-                </div>
-                <div class="bio-btn btn btn--small btn--default" ng-show="descriptionShown" ng-click="hideDescription()">
-                    Hide Bio &rsaquo;
-                </div>
-            </div>
-            <!--Results-->
-            <div ng-show="resultsVisible">
-                <p class="profile-header__title text-center pulse" ng-show="resultsVisible" ng-class="{'success': correctAnswer, 'failure': !correctAnswer }">
-                    <span ng-show="correctAnswer">Correct! You are {{ correctAnswers }} / {{ count }}</span>
-                    <span ng-hide="correctAnswer">Nope! You are {{ correctAnswers }} / {{ count }}</span>
-                </p>
-            </div>
-        </div>
-
-        <!-- Biography -->
-        <p class="bio-info bio-info--paragraph weak test" ng-show="descriptionShown">{{ employee.description }}</p>
-
-        <!--Profile Info-->
-        <div class="profile-info">
-            <!--List of possible people-->
-            <div class="basic-list">
-                <button
-                    class="possible-name basic-list--option btn"
-                    ng-class="{'selected': person === selectedName }"
-                    ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy"
-                    ng-click="selectPerson(person)"
-                    ng-disabled="resultsVisible">
-                    {{ person }}
-                </button>
-            </div>
-            <!--Action Buttons-->
-        </div>
-
-        <div class="bottom-btn bottom-primary btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
     </div>
 
-</div>
 
-<div class="card" ng-show="count > employeeList.length">
-    <h1 class="app-header final-header">Finished!</h1>
-    <div class="results-info">
-        <p>You were <span ng-class="{'success': successRate >= 0.5, 'failure': successRate < 0.5,}"><b>{{ correctAnswers }} / {{ count-1 }}</b></p>
-        <hr class="results-info__hr">
-        <p ng-show="successRate === 0">That was awful. You should look at the list of people you got wrong.</p>
-        <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work, and look at the list of people you got wrong.</p>
-        <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv. And definitely look at the list of people you got wrong.</p>
-        <p ng-show="successRate == 1">Very well done! Contact Adam Schuster for a Starbucks Gift Certificate!</p>
-        <p ng-show="successRate == 1">
-            <br>
-            <img class="success-image img--responsive" src="http://ecx.images-amazon.com/images/I/81zvZNEDh8L._SL1500_.jpg"></img>
-        </p>
+    <div ng-show="count > 0">
+        <div class="card" ng-repeat="employee in employeeList" ng-show="$index === count-1">
+            <div class="profile-img-container">
+                <img class="profile-img img--responsive" src="{{ employee.image }}"></img>
+                <div class="profile-name" ng-show="!resultsVisible">
+                    <h2 class="sub-header">Who am I?</h2>
+                </div>
+                <div ng-show="resultsVisible">
+                    <div class="profile-name" ng-class="{'bounce': correctAnswer, 'shake': !correctAnswer}" ng-show="resultsVisible">
+                        <h2 class="sub-header">{{ employee.name }}</h2>
+                    </div>
+                </div>
+            </div>
+            <!--Name-->
+            <div class="profile-header text-center test">
+                <p class="profile-header__title text-center weak">{{ employee.title }}</p>
+                <!--Results-->
+                <div ng-show="resultsVisible">
+                    <p class="profile-header__title text-center pulse" ng-show="resultsVisible" ng-class="{'success': correctAnswer, 'failure': !correctAnswer }">
+                        <span ng-show="correctAnswer">Correct! You are {{ correctAnswers }} / {{ count }}</span>
+                        <span ng-hide="correctAnswer">Nope! You are {{ correctAnswers }} / {{ count }}</span>
+                    </p>
+                </div>
+            </div>
+
+            <!--Profile Info-->
+            <div class="profile-info">
+                <!--List of possible people-->
+                <div class="basic-list">
+                    <button
+                        class="possible-name basic-list--option btn"
+                        ng-class="{'selected': person === selectedName }"
+                        ng-repeat="person in listOfPeople | orderBy:$scope.randomOrderBy"
+                        ng-click="selectPerson(person)"
+                        ng-disabled="resultsVisible">
+                        {{ person }}
+                    </button>
+                </div>
+                <!--Action Buttons-->
+            </div>
+
+            <div class="bottom-btn bottom-primary btn" ng-show="nameShown" ng-click="showNext()">Next!</div>
+        </div>
+
     </div>
 
-    <hr ng-show="successRate < 1">
+    <div class="card" ng-show="count > employeeList.length">
+        <h1 class="app-header final-header">Finished!</h1>
+        <div class="results-info">
+            <p>You were <span ng-class="{'success': successRate >= 0.5, 'failure': successRate < 0.5,}"><b>{{ correctAnswers }} / {{ count-1 }}</b></p>
+            <hr class="results-info__hr">
+            <p ng-show="successRate === 0">That was awful. You should look at the list of people you got wrong.</p>
+            <p ng-show="successRate >= 0.5 && successRate < 1">Congratulations! Now get back to work, and look at the list of people you got wrong.</p>
+            <p ng-show="successRate < 0.5 && successRate > 0">Maybe you should keep trying bruv. And definitely look at the list of people you got wrong.</p>
+            <p ng-show="successRate == 1">Very well done! Contact Adam Schuster for a Starbucks Gift Certificate!</p>
+            <p ng-show="successRate == 1">
+                <br>
+                <img class="success-image img--responsive" src="http://ecx.images-amazon.com/images/I/81zvZNEDh8L._SL1500_.jpg"></img>
+            </p>
+        </div>
 
-    <div class="results-info" ng-show="successRate < 1">
-        <h4 class="text-center">Names you missed</h4>
-        <ul class="block-list">
-            <li class="wrong-names block-list--item" ng-repeat="employee in employeeList" ng-hide="resultsArray[$index] == 'right'">
-                <img class="wrong-names__profile-img img--responsive" src="{{ employee.image }}"></img>
-                <p class="wrong-names__name text-center">{{ employee.name }}</p>
-            </li>
-        </ul>
+        <hr ng-show="successRate < 1">
+
+        <div class="results-info" ng-show="successRate < 1">
+            <h4 class="text-center">Names you missed</h4>
+            <ul class="block-list">
+                <li class="wrong-names block-list--item" ng-repeat="employee in employeeList" ng-hide="resultsArray[$index] == 'right'">
+                    <img class="wrong-names__profile-img img--responsive" src="{{ employee.image }}"></img>
+                    <p class="wrong-names__name text-center">{{ employee.name }}</p>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

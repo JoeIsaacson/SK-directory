@@ -34,8 +34,27 @@ hr {
     color: #777;
 }
 
+.panel {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+.panel--left {
+    left: 0;
+    right: 50%;
+    background-color: crimson;
+}
+
+.panel--right {
+    right: 0;
+    left: 50%;
+    background-color: red;
+}
+
 .container {
-    max-width: 300px;
+    max-width: 320px;
     position: relative;
     margin: 0 auto;
 }
@@ -83,10 +102,13 @@ hr {
     margin-left: -1px;
     margin-right: -1px;
     margin-top: -1px;
+    max-height: 320px;
+    overflow: hidden;
 }
 
 .profile-img {
     border-radius: 6px 6px 0 0;
+    min-width: 320px;
 }
 
 .basic-list {
@@ -136,7 +158,7 @@ hr {
 
 .profile-name {
     position: absolute;
-    top: 215px;
+    top: 245px;
     width: 100%;
     text-align: center;
 }

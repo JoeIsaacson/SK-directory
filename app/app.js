@@ -5,7 +5,6 @@ angular.module('myApp', [
   'ngAnimate',
   'ngRoute',
   'myApp.view1',
-  'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
