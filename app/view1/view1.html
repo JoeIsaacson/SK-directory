@@ -1,15 +1,27 @@
 <!--NAV-->
 <nav class="nav text-center">
-    <img class="nav-logo sk-logo" src="images/assets/songkick_logo.png"></img>
-    <h1 class="intro-header">Name Game</h1>
+    <div class="nav__container">
+        <img class="nav-logo sk-logo" src="images/assets/songkick_logo.png"></img>
+        <h1 class="intro-header" ng-show="count < 2">Name Game</h1>
+        <div class="score-counts">
+            <div class="score-count incorrect-answers" ng-show="count > 1">
+                <h1>{{ incorrectAnswers}}</h1>
+                <small>Incorrect</small>
+            </div>
+            <div class="score-count correct-answers" ng-show="count > 1">
+                <h1>{{ correctAnswers}}</h1>
+                <small>Correct</small>
+            </div>
+        </div>
+    </div>
 </nav>
 
 <div class="text-center" ng-show="count < 1">
     <div class="panel panel--left" ng-click="selectDirectory('SK')">
-        <h2 class="panel__header">Songkick</h2>
+        <h2 class="panel__header">Songkick <br>Employees</h2>
     </div>
     <div class="panel panel--right" ng-click="selectDirectory('CS')">
-        <h2 class="panel__header">CrowdSurge</h2>
+        <h2 class="panel__header">CrowdSurge <br>Employees</h2>
     </div>
 </div>
 
@@ -29,7 +41,7 @@
             </div>
             <!--Name-->
             <div class="profile-header text-center test">
-                <p class="profile-header__title text-center weak">{{ employee.title }}</p>
+                <p class="profile-header__title text-center weak" ng-hide="resultsVisible">{{ employee.title }}</p>
                 <!--Results-->
                 <div ng-show="resultsVisible">
                     <p class="profile-header__title text-center pulse" ng-show="resultsVisible" ng-class="{'success': correctAnswer, 'failure': !correctAnswer }">

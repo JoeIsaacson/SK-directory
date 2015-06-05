@@ -435,148 +435,148 @@ angular.module('myApp.view1', ['ngRoute'])
             name: "Dan Crow",
             title: "CTO",
             image: "images/Songkick/IMG_1760.JPG"
+        },
+        {
+            name: "David Anderson",
+            title: "Operations Director",
+            image: "images/Songkick/IMG_1738.JPG"
+        },
+        {
+            name: "Gideon Bullock",
+            title: "Design Director",
+            image: "images/Songkick/IMG_1757.JPG"
         }
-        // {
-        //     name: "David Anderson",
-        //     title: "Operations Director",
-        //     image: "images/Songkick/IMG_1738.JPG"
-        // },
-        // {
-        //     name: "Gideon Bullock",
-        //     title: "Design Director",
-        //     image: "images/Songkick/IMG_1757.JPG"
-        // }
-        // ,
-        // {
-        //     name: "Marc Pacheco",
-        //     title: "Client-side Architect",
-        //     image: "images/Songkick/IMG_1756.JPG"
-        // },
-        // {
-        //     name: "Vivien Barousse",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1729.JPG"
-        // },
-        // {
-        //     name: "Daniel Lucraft ",
-        //     title: "Chief Architect",
-        //     image: "images/Songkick/IMG_1744.JPG"
-        // },
-        // {
-        //     name: "Alexey Blinov",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1751.JPG"
-        // },
-        // {
-        //     name: "Sam Briggs",
-        //     title: "Songkick Soldier",
-        //     image: "https://assets.sk-static.com/assets/nw/static-pages/team/sr-1b8ee30.jpg"
-        // },
-        // {
-        //     name: "Tom Clark",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1731.JPG"
-        // },
-        // {
-        //     name: "Elliot Hancock",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1743.JPG"
-        // },
-        // {
-        //     name: "Jamie Hughes",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1749.JPG"
-        // },
-        // {
-        //     name: "Paul Lawson",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1748.JPG"
-        // },
-        // {
-        //     name: "Tracey Lee-Joe",
-        //     title: "User-experience Designer",
-        //     image: "https://assets.sk-static.com/assets/nw/static-pages/team/tracey-c23dea6.jpg"
-        // },
-        // {
-        //     name: "Sabrina Leandro",
-        //     title: "Director of Engineering",
-        //     image: "images/Songkick/IMG_1726.JPG"
-        // },
-        // {
-        //     name: "Tom May",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1732.JPG"
-        // },
-        // {
-        //     name: "Adam McIsaac",
-        //     title: "Songkick Soldier",
-        //     image: "https://assets.sk-static.com/assets/nw/static-pages/team/adam-b7a246c.jpg"
-        // },
-        // {
-        //     name: "Michael Orland",
-        //     title: "Chief Revenue Officer",
-        //     image: "images/Songkick/IMG_1724.JPG"
-        // },
-        // {
-        //     name: "Brooke Parrott",
-        //     title: "Songkick Soldier",
-        //     image: "https://assets.sk-static.com/assets/nw/static-pages/team/bp-4c0d6e2.jpg"
-        // },
-        // {
-        //     name: "Aaron Randall",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1728.JPG"
-        // },
-        // {
-        //     name: "Sam Rudge",
-        //     title: "Infrastructure Engineer",
-        //     image: "images/Songkick/IMG_1735.JPG"
-        // },
-        // {
-        //     name: "Emily Sergent",
-        //     title: "Head of Community",
-        //     image: "images/Songkick/IMG_1736.JPG"
-        // },
-        // {
-        //     name: "Paul Springett",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1745.JPG"
-        // },
-        // {
-        //     name: "Karim Dia Toubajie",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_3718.JPG"
-        // },
-        // {
-        //     name: "Robin Tweedie",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1734.JPG"
-        // },
-        // {
-        //     name: "Aaron Rodgers",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1727.JPG"
-        // },
-        // {
-        //     name: "Amy Phillips",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1733.JPG"
-        // },
-        // {
-        //     name: "Lucy Wardley",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1740.JPG"
-        // },
-        // {
-        //     name: "Kalyn Dobbs",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1741.JPG"
-        // },
-        // {
-        //     name: "James Gibb",
-        //     title: "Songkick Soldier",
-        //     image: "images/Songkick/IMG_1742.JPG"
-        // }
+        ,
+        {
+            name: "Marc Pacheco",
+            title: "Client-side Architect",
+            image: "images/Songkick/IMG_1756.JPG"
+        },
+        {
+            name: "Vivien Barousse",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1729.JPG"
+        },
+        {
+            name: "Daniel Lucraft ",
+            title: "Chief Architect",
+            image: "images/Songkick/IMG_1744.JPG"
+        },
+        {
+            name: "Alexey Blinov",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1751.JPG"
+        },
+        {
+            name: "Sam Briggs",
+            title: "Songkick Soldier",
+            image: "https://assets.sk-static.com/assets/nw/static-pages/team/sr-1b8ee30.jpg"
+        },
+        {
+            name: "Tom Clark",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1731.JPG"
+        },
+        {
+            name: "Elliot Hancock",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1743.JPG"
+        },
+        {
+            name: "Jamie Hughes",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1749.JPG"
+        },
+        {
+            name: "Paul Lawson",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1748.JPG"
+        },
+        {
+            name: "Tracey Lee-Joe",
+            title: "User-experience Designer",
+            image: "https://assets.sk-static.com/assets/nw/static-pages/team/tracey-c23dea6.jpg"
+        },
+        {
+            name: "Sabrina Leandro",
+            title: "Director of Engineering",
+            image: "images/Songkick/IMG_1726.JPG"
+        },
+        {
+            name: "Tom May",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1732.JPG"
+        },
+        {
+            name: "Adam McIsaac",
+            title: "Songkick Soldier",
+            image: "https://assets.sk-static.com/assets/nw/static-pages/team/adam-b7a246c.jpg"
+        },
+        {
+            name: "Michael Orland",
+            title: "Chief Revenue Officer",
+            image: "images/Songkick/IMG_1724.JPG"
+        },
+        {
+            name: "Brooke Parrott",
+            title: "Songkick Soldier",
+            image: "https://assets.sk-static.com/assets/nw/static-pages/team/bp-4c0d6e2.jpg"
+        },
+        {
+            name: "Aaron Randall",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1728.JPG"
+        },
+        {
+            name: "Sam Rudge",
+            title: "Infrastructure Engineer",
+            image: "images/Songkick/IMG_1735.JPG"
+        },
+        {
+            name: "Emily Sergent",
+            title: "Head of Community",
+            image: "images/Songkick/IMG_1736.JPG"
+        },
+        {
+            name: "Paul Springett",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1745.JPG"
+        },
+        {
+            name: "Karim Dia Toubajie",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_3718.JPG"
+        },
+        {
+            name: "Robin Tweedie",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1734.JPG"
+        },
+        {
+            name: "Aaron Rodgers",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1727.JPG"
+        },
+        {
+            name: "Amy Phillips",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1733.JPG"
+        },
+        {
+            name: "Lucy Wardley",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1740.JPG"
+        },
+        {
+            name: "Kalyn Dobbs",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1741.JPG"
+        },
+        {
+            name: "James Gibb",
+            title: "Songkick Soldier",
+            image: "images/Songkick/IMG_1742.JPG"
+        }
     ];
 
     var setList = [];
@@ -584,7 +584,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
     var makeList = function() {
 
-        for (let i in $scope.employeeList) {
+        for (var i in $scope.employeeList) {
 
             if ($scope.randomnumber1 != i && $scope.randomnumber2 != i) {
                 setList.push([i]);
@@ -601,9 +601,6 @@ angular.module('myApp.view1', ['ngRoute'])
                 };
             };
         };
-
-        console.log(setList);
-
     };
 
     $scope.showName = function() {
@@ -658,6 +655,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 $scope.correctAnswer = true;
                 $scope.correctAnswers = $scope.correctAnswers +1;
                 $scope.resultsArray.push("right");
+                $scope.showNext();
                 console.log($scope.resultsArray);
             } else {
                 $scope.correctAnswer = false;
