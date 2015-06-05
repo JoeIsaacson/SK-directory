@@ -47,14 +47,19 @@ hr {
     content: "";
     background-size: 100% auto;
     background-image: url("https://d13yacurqjgara.cloudfront.net/users/43762/screenshots/1925708/emojis.gif");
-    opacity: 0.5;
+    opacity: 0.8;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 3;
     transition: opacity 1s ease;
-    background-blend-mode: screen;
+    background-blend-mode: luminosity;
+}
+
+.panel:hover::after {
+    transition: background-blend-mode 1s ease;
+    background-blend-mode: luminosity;
 }
 
 .panel__header {
@@ -84,11 +89,11 @@ hr {
     right: 50%;
 }
 
-.panel--left:hover::after {
+.panel--left:after {
     background-color: #f80064;
 }
 
-.panel--right:hover::after {
+.panel--right:after {
     background-color: #117AC2;
 }
 
@@ -218,7 +223,7 @@ hr {
     margin: 30px auto 40px;
     overflow: hidden;
     z-index: 1;
-    max-width: 270px;
+    max-width: 300px;
 }
 
 .block-list:last-child {
@@ -247,7 +252,7 @@ hr {
     margin-left: -1px;
     margin-right: -1px;
     margin-top: -1px;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
 }
 
@@ -297,7 +302,7 @@ hr {
 
 .profile-name {
     position: absolute;
-    top: 140px;
+    top: 205px;
     width: 100%;
     text-align: center;
 }
