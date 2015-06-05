@@ -58,6 +58,7 @@ hr {
 }
 
 .panel__header {
+    text-transform: uppercase;
     margin-top: 300px;
     cursor: pointer;
     color: #666;
@@ -70,6 +71,12 @@ hr {
     z-index: 5;
     position: relative;
     cursor: pointer;
+    opacity: 0.8;
+}
+
+.panel:hover .panel__header {
+    text-decoration: underline;
+    opacity: 1.0;
 }
 
 .panel--left {
@@ -84,7 +91,6 @@ hr {
 .panel--right:hover::after {
     background-color: #117AC2;
 }
-
 
 .panel--right {
     right: 0;
@@ -126,6 +132,10 @@ hr {
 
     .panel--right:hover::after {
         background-color: transparent;
+    }
+
+    .panel__header {
+        opacity: 1;
     }
 
     .panel--left .panel__header {
