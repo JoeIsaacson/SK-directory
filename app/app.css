@@ -1,6 +1,8 @@
 body {
     background-color: #fafafa;
     color: #545252;
+    font-family: 'helvetica neue',helvetica,arial,sans-serif;
+    position: relative;
 }
 
 h1,
@@ -39,19 +41,67 @@ hr {
     height: 100%;
     top: 0;
     bottom: 0;
+    background-size: contain;
+    background-image: url("images/assets/background.jpg");
+    transition: opacity 1s ease;
+}
+
+.panel__header {
+    color: #fff;
+    padding-top: 300px;
+}
+
+.panel:hover {
+    opacity: 0.8;
 }
 
 .panel--left {
     left: 0;
     right: 50%;
-    background-color: crimson;
+    border-right: 1px solid crimson;
 }
 
 .panel--right {
     right: 0;
     left: 50%;
-    background-color: red;
 }
+
+@media screen and (max-width: 479px) {
+    .panel {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background-image: none;
+    }
+
+    .panel--left {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 50%;
+        background-color: red;
+        border-right: 0;
+        background-color: #f80064
+        color: #f80064
+    }
+
+    .panel--right {
+        left: 0;
+        right: 0;
+        top: 50%;
+        bottom: 0;
+        background-color: #fff;
+    }
+
+    .panel--right .panel__header {
+        color: #f80046;
+    }
+
+    .panel__header {
+        padding-top: 80px;
+    }
+}
+
 
 .container {
     max-width: 320px;
@@ -59,21 +109,41 @@ hr {
     margin: 0 auto;
 }
 
+.nav {
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.nav-logo {
+    width: 180px;
+}
+
+.intro-header {
+    position: relative;
+    z-index: 1;
+    font-size: 110%;
+    color: #f80046;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
 .text-center {
     text-align: center;
 }
 
 .card {
-    position: absolute;
+    position: relative;
     top: 0;
     border-radius: 6px;
     background-color: #f2f2f2;
     border: 1px solid #ddd;
-    margin: 20px 10px 40px;
-}
-
-.card--start {
-    border: 1px solid #B3B3B3;
+    margin: -40px auto 40px;
+    overflow: hidden;
+    z-index: 1;
+    max-width: 320px;
 }
 
 .block-list:last-child {
@@ -102,7 +172,7 @@ hr {
     margin-left: -1px;
     margin-right: -1px;
     margin-top: -1px;
-    max-height: 320px;
+    height: 270px;
     overflow: hidden;
 }
 
@@ -158,7 +228,7 @@ hr {
 
 .profile-name {
     position: absolute;
-    top: 245px;
+    top: 200px;
     width: 100%;
     text-align: center;
 }

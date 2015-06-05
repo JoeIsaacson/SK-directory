@@ -1,14 +1,19 @@
-<div class="panel panel--left" ng-click="selectDirectory('SK')"></div>
-<div class="panel panel--right" ng-click="selectDirectory('CS')"></div>
+<!--NAV-->
+<nav class="nav text-center">
+    <img class="nav-logo sk-logo" src="images/assets/songkick_logo.png"></img>
+    <h1 class="intro-header">Name Game</h1>
+</nav>
 
-<div class="container">
-    <div class="card" ng-show="count < 1">
-        <div class="profile-img-container">
-            <img class="profile-img img--responsive" src="starter-img.jpg"></img>
-        </div>
+<div class="text-center" ng-show="count < 1">
+    <div class="panel panel--left" ng-click="selectDirectory('SK')">
+        <h2 class="panel__header">Songkick</h2>
     </div>
+    <div class="panel panel--right" ng-click="selectDirectory('CS')">
+        <h2 class="panel__header">CrowdSurge</h2>
+    </div>
+</div>
 
-
+<div class="container"
     <div ng-show="count > 0">
         <div class="card" ng-repeat="employee in employeeList" ng-show="$index === count-1">
             <div class="profile-img-container">
