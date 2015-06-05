@@ -2,7 +2,6 @@ body {
     background-color: #fafafa;
     color: #545252;
     font-family: 'helvetica neue',helvetica,arial,sans-serif;
-    position: relative;
 }
 
 h1,
@@ -49,6 +48,7 @@ hr {
 .panel__header {
     color: #fff;
     padding-top: 300px;
+    cursor: pointer;
 }
 
 .panel:hover {
@@ -67,6 +67,10 @@ hr {
 }
 
 @media screen and (max-width: 479px) {
+
+    body {
+        position: relative;
+    }
     .panel {
         position: relative;
         width: 100%;
