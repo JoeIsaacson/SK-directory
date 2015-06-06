@@ -30,9 +30,6 @@
         <div class="card" ng-repeat="employee in employeeList" ng-show="$index === count-1">
             <div class="profile-img-container">
                 <img class="profile-img img--responsive" src="{{ employee.image }}"></img>
-                <div class="profile-name" ng-show="!resultsVisible">
-                    <h2 class="sub-header">Who am I?</h2>
-                </div>
                 <div ng-show="resultsVisible">
                     <div class="profile-name" ng-class="{'bounce': correctAnswer, 'shake': !correctAnswer}" ng-show="resultsVisible">
                         <h2 class="sub-header">{{ employee.name }}</h2>

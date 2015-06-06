@@ -89,11 +89,13 @@ hr {
     right: 50%;
 }
 
-.panel--left:after {
+.panel--left:hover:after {
+    transition: 0.5s background-color ease;
     background-color: #f80064;
 }
 
-.panel--right:after {
+.panel--right:hover:after {
+    transition: 0.5s background-color ease;
     background-color: #117AC2;
 }
 
@@ -302,7 +304,7 @@ hr {
 
 .profile-name {
     position: absolute;
-    top: 205px;
+    top: 190px;
     width: 100%;
     text-align: center;
 }

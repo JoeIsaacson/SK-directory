@@ -45,7 +45,8 @@ angular.module('myApp.view1', ['ngRoute'])
         {
             name: "Alyea Afzal",
             title: "Commercial Coordinator",
-            image: "images/CrowdSurge/2.jpg"
+            image: "images/CrowdSurge/2.jpg",
+            gender: "f"
         },
         {
             name: "Jon Attfield",
@@ -690,23 +691,29 @@ angular.module('myApp.view1', ['ngRoute'])
 
     var makeList = function() {
 
+        // Addition of second / third person IF duplicate
         for (var i in $scope.employeeList) {
 
             if ($scope.randomnumber1 != i && $scope.randomnumber2 != i) {
                 setList.push([i]);
-            } else {
-                console.log("duplicate");
             };
         };
 
+        // Addition of second / third person IF duplicate
         for (var i = 0; i < setList.length; i++) {
+
+            var selectedGender = $scope.employeeList[i].gender;
+
             while (setList[i].length < 3) {
+
                 var randomNumber = Math.floor(Math.random()*setList.length);
-                if ( $scope.employeeList[setList[0]].gender === $scope.employeeList[randomNumber].gender && randomNumber != i && randomNumber != setList[i][1]) {
+                if (selectedGender === $scope.employeeList[randomNumber].gender && randomNumber != i && randomNumber != setList[i][1]) {
                     setList[i].push(randomNumber);
                 };
             };
         };
+
+        console.log(setList);
     };
 
     $scope.showName = function() {
