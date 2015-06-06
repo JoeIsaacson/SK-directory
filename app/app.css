@@ -46,7 +46,7 @@ hr {
     position: absolute;
     content: "";
     background-size: 100% auto;
-    background-image: url("https://d13yacurqjgara.cloudfront.net/users/43762/screenshots/1925708/emojis.gif");
+    background-image: url("images/assets/emoji-faces.gif");
     opacity: 0.8;
     top: 0;
     left: 0;
@@ -159,6 +159,11 @@ hr {
     }
 }
 
+@media screen and (min-width: 779px) {
+    .panel:after {
+        background-size: 50% auto;
+    }
+}
 
 .container {
     max-width: 320px;
