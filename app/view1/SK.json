@@ -1,0 +1,189 @@
+[
+    {
+        "name": "Ian Hogarth",
+        "title": "Co-founder, CEO",
+        "image": "images/Songkick/IMG_1759.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Michelle You",
+        "title": "Co-founder, Chief Product Officer",
+        "image": "images/Songkick/IMG_1752.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Dan Crow",
+        "title": "CTO",
+        "image": "images/Songkick/IMG_1760.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "David Anderson",
+        "title": "Operations Director",
+        "image": "images/Songkick/IMG_1738.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Gideon Bullock",
+        "title": "Design Director",
+        "image": "images/Songkick/IMG_1757.jpg",
+        "gender": "m"
+    }
+    ,
+    {
+        "name": "Marc Pacheco",
+        "title": "Client-side Architect",
+        "image": "images/Songkick/IMG_1756.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Vivien Barousse",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1729.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Daniel Lucraft ",
+        "title": "Chief Architect",
+        "image": "images/Songkick/IMG_1744.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Alexey Blinov",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1751.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Sam Briggs",
+        "title": "Songkick Soldier",
+        "image": "https://assets.sk-static.com/assets/nw/static-pages/team/sr-1b8ee30.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Tom Clark",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1731.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Elliot Hancock",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1743.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Jamie Hughes",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1749.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Paul Lawson",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1748.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Tracey Lee-Joe",
+        "title": "User-experience Designer",
+        "image": "https://assets.sk-static.com/assets/nw/static-pages/team/tracey-c23dea6.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Sabrina Leandro",
+        "title": "Director of Engineering",
+        "image": "images/Songkick/IMG_1726.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Tom May",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1732.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Adam McIsaac",
+        "title": "Songkick Soldier",
+        "image": "https://assets.sk-static.com/assets/nw/static-pages/team/adam-b7a246c.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Michael Orland",
+        "title": "Chief Revenue Officer",
+        "image": "images/Songkick/IMG_1724.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Brooke Parrott",
+        "title": "Songkick Soldier",
+        "image": "https://assets.sk-static.com/assets/nw/static-pages/team/bp-4c0d6e2.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Aaron Randall",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1728.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Sam Rudge",
+        "title": "Infrastructure Engineer",
+        "image": "images/Songkick/IMG_1735.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Emily Sergent",
+        "title": "Head of Community",
+        "image": "images/Songkick/IMG_1736.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Paul Springett",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1745.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Karim Dia Toubajie",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_3718.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Robin Tweedie",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1734.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Aaron Rodgers",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1727.jpg",
+        "gender": "m"
+    },
+    {
+        "name": "Amy Phillips",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1733.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Lucy Wardley",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1740.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "Kalyn Dobbs",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1741.jpg",
+        "gender": "f"
+    },
+    {
+        "name": "James Gibb",
+        "title": "Songkick Soldier",
+        "image": "images/Songkick/IMG_1742.jpg",
+        "gender": "m"
+    }
+]
