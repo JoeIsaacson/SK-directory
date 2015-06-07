@@ -66,10 +66,10 @@ hr {
     text-transform: uppercase;
     margin-top: 300px;
     cursor: pointer;
-    color: #666;
     margin-top: 300px;
     cursor: pointer;
-    background-color: #fff;
+    color: #fff;
+    background-color: #f80046;
     display: inline-block;
     padding: 20px;
     border-radius: 6px;
