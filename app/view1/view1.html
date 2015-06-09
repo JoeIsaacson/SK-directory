@@ -37,15 +37,13 @@
                 </div>
             </div>
             <!--Name-->
-            <div class="profile-header text-center test">
-                <p class="profile-header__title text-center weak" ng-hide="resultsVisible">{{ employee.title }}</p>
+            <div class="profile-header text-center" ng-show="resultsVisible">
+                <!-- <p class="profile-header__title text-center weak" ng-hide="resultsVisible">{{ employee.title }}</p> -->
                 <!--Results-->
-                <div ng-show="resultsVisible">
-                    <p class="profile-header__title text-center pulse" ng-show="resultsVisible" ng-class="{'success': correctAnswer, 'failure': !correctAnswer }">
-                        <span ng-show="correctAnswer">Correct! You are {{ correctAnswers }} / {{ count }}</span>
-                        <span ng-hide="correctAnswer">Nope! You are {{ correctAnswers }} / {{ count }}</span>
-                    </p>
-                </div>
+                <p class="profile-header__title text-center pulse" ng-show="resultsVisible" ng-class="{'success': correctAnswer, 'failure': !correctAnswer }">
+                    <span ng-show="correctAnswer">Correct! You are {{ correctAnswers }} / {{ count }}</span>
+                    <span ng-hide="correctAnswer">Nope! You are {{ correctAnswers }} / {{ count }}</span>
+                </p>
             </div>
 
             <!--Profile Info-->
