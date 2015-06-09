@@ -20,29 +20,21 @@ angular.module('myApp.view1', ['ngRoute'])
     $scope.correctAnswers = 0;
     $scope.incorrectAnswers = 0;
 
-    // Get CS Data
-    $http.get('view1/CS.json').success(function(data) {
-        $scope.employeeListCS = data;
-    });
-
-    // Get SK Data
-    $http.get('view1/SK.json').success(function(data) {
-        $scope.employeeListSK = data;
-    });
-
-
     // Select A Directory
     $scope.selectDirectory = function(selectedDirectory) {
-        console.log(selectedDirectory);
 
         if (selectedDirectory === "SK") {
-            $rootScope.employeeList = $scope.employeeListSK;
-            makeList();
-            $scope.showNext();
+            $http.get('view1/SK.json').success(function(data) {
+                $rootScope.employeeList = data;
+                makeList();
+                $scope.showNext();
+            });
         } else {
-            $rootScope.employeeList = $scope.employeeListCS;
-            makeList();
-            $scope.showNext();
+            $http.get('view1/CS.json').success(function(data) {
+                $rootScope.employeeList = data;
+                makeList();
+                $scope.showNext();
+            });
         };
 
     };
@@ -72,8 +64,6 @@ angular.module('myApp.view1', ['ngRoute'])
                 };
             };
         };
-
-        console.log(setList);
     };
 
     $scope.showName = function() {
